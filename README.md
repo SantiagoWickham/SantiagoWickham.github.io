@@ -1,1 +1,213 @@
-# SantiagoWickham.github.io
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMS Enterprise — Folleto Comercial</title>
+  <style>
+    :root{
+      --bg:#0f172a; --text:#e5e7eb; --muted:#94a3b8;
+      --brand:#2563eb; --brand-2:#1d4ed8; --accent:#38bdf8;
+      --card:#0b1226; --card-border:#1f2a44; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:40px 18px}
+
+   /* HEADER corporativo */
+   header{
+     display:flex; align-items:center; gap:14px; margin-bottom:12px
+   }
+   .logo-chip{
+     background:#7f8cb3;           /* mismo family del card */
+     border:2px solid #3b4563;      /* borde sutil */
+     border-radius:20px;
+     padding:18px;                  /* respiración interna */
+     display:flex; align-items:center; justify-content:center;
+   }
+   .logo-chip img{
+     height:80px;                   /* tamaño más grande pero proporcionado */
+     width:auto; display:block;
+     filter:none;                   /* sin sombras ni filtros */
+   }
+   .brand-title{
+     font-weight:800; letter-spacing:.2px; color:#e5e7eb;
+     font-size:20px; line-height:1; margin-top:2px
+   }
+   @media(min-width:980px){
+     .logo-chip img{ height:80px }
+     .brand-title{ font-size:22px }
+   }
+
+   /* Título + subtítulo más ejecutivos */
+   h1{ font-size:40px; line-height:1.1; margin:14px 0 6px; font-weight:900 }
+   .gradient{
+     background:linear-gradient(92deg,#93c5fd,#60a5fa); /* gradiente más suave */
+     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent
+   }
+    .subtitle{ font-size:18px; color:#cbd5e1; margin:0 0 14px }
+    .lead{ color:#a8b3c7; } /* un poco más claro para legibilidad */
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:650;text-decoration:none}
+    .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
+    .btn-ghost{border:1px solid var(--card-border);color:#cbd5e1}
+    .btn-primary:hover,.btn-ghost:hover{filter:brightness(1.06)}
+    h2{margin:36px 0 6px}
+    .note{color:var(--muted);font-size:14px;margin:0 0 14px}
+
+    /* PLANES */
+    .grid{display:grid;gap:18px}
+    @media(min-width:980px){ .grid{grid-template-columns:1fr 1fr 1fr} }
+    .card{position:relative;border:1px solid var(--card-border);background:var(--card);
+          border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:440px}
+    .card-inner{display:flex;flex-direction:column;gap:10px;padding:22px;flex:1}
+    .card h3{margin:0;font-size:22px}
+    .micro{color:#94a3b8;font-size:13px;margin-top:2px}
+    .price{font-size:28px;font-weight:800;margin:6px 0 8px}
+    ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+    li{line-height:1.45;padding-left:22px;position:relative}
+    li::before{content:"✔";position:absolute;left:0;color:#22c55e;font-weight:800}
+    .trial{margin-top:8px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);
+           color:#a7f3d0;padding:10px 12px;border-radius:12px;font-weight:600}
+    .cta-bottom{padding:16px 22px;border-top:1px solid var(--card-border);display:flex;justify-content:flex-start}
+
+    /* Destacar Premium al centro */
+    .lite{order:1}
+    .premium{order:2;border-color:#2a59d8}
+    .pro{order:3}
+    @media(min-width:980px){
+      .premium{transform:scale(1.03)}
+    }
+    .badge{position:absolute;top:14px;right:14px;background:#22c55e;color:#052e16;
+           border:1px solid #157f3b;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    .badge-blue{background:linear-gradient(90deg,#60a5fa,#2563eb);color:#071026;border-color:#1f3aa4}
+    .glow::before{content:"";position:absolute;inset:-2px;border-radius:calc(var(--radius) + 2px);
+           background:conic-gradient(from 0deg, rgba(37,99,235,.0), rgba(37,99,235,.35), rgba(56,189,248,.35), rgba(37,99,235,.0));
+           filter:blur(16px);opacity:.75;z-index:-1;animation:glow 6s linear infinite}
+    @keyframes glow{to{transform:rotate(360deg)}}
+
+    /* Footer */
+    .footer{margin-top:36px;border-top:1px solid var(--card-border);padding-top:16px;text-align:center;color:#cbd5e1;font-size:14px}
+    .footer a{color:#93c5fd;text-decoration:none}
+  @media print {
+  /* fondo blanco y tipografías nítidas */
+  html, body { background: #fff !important; color: #111 !important; }
+  .wrap { max-width: 900px !important; padding: 24px !important; }
+
+  /* ocultar brillos/animaciones y bordes oscuros innecesarios */
+  .glow::before { display: none !important; }
+  .card { box-shadow: none !important; border-color: #e5e7eb !important; }
+  .cta-bottom { border-top: 1px solid #e5e7eb !important; }
+
+  /* botones como links simples */
+  .btn, .btn-primary, .btn-ghost { 
+    background: none !important; color: #111 !important; border: 1px solid #999 !important; 
+    box-shadow: none !important; 
+  }
+
+  /* ocultar el badge animado si distrae en PDF */
+  .badge, .badge-blue { filter: grayscale(1); }
+}
+@media print {
+  /* el texto que tenía gradiente pasa a color sólido */
+  .gradient{
+    background: none !important;
+    -webkit-text-fill-color: #111 !important;
+    color: #111 !important;
+  }
+  h1{ color: #111 !important; }
+
+  /* opcional: mejorar contraste general en papel */
+  .subtitle, .lead { color: #333 !important; }
+  a { color: #111 !important; text-decoration: underline !important; }
+}
+  </style>
+</head>
+<link rel="icon" href="logo_sms_enterprise.png">
+<meta property="og:title" content="SMS Enterprise — Anticipá el riesgo cambiario">
+<meta property="og:description" content="Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo_sms_enterprise.png">
+<meta name="twitter:card" content="summary_large_image">
+<body>
+  <div class="wrap">
+    <header>
+     <div class="logo-chip">
+       <img src="logo_sms_enterprise.png" alt="SMS Enterprise">
+     </div>
+     <div class="brand-title">SMS Enterprise</div>
+   </header>
+
+    <h1>Anticipá el <span class="gradient">riesgo cambiario</span> con SMS Enterprise</h1>
+    <p class="subtitle">La señal que transforma la incertidumbre en estrategia.</p>
+    <p class="lead">SMS Enterprise — <i>Signal Matrix for Shocks</i> — es un modelo cuantitativo que estima la probabilidad de tensiones cambiarias (horizonte de 6 meses). Diseñado para bancos, inversores y organismos públicos, convierte señales macroeconómicas en una probabilidad única, transparente y accionable.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Demo%20SMS%20Enterprise&body=Hola%20Santiago,%20quiero%20agendar%20una%20demo%20de%20SMS%20Enterprise.%20Mis%20datos%20son:%20">Agendá una demo</a>
+      <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Prueba%20gratuita%2060%20d%C3%ADas%20-%20SMS%20Enterprise&body=Hola%20Santiago,%20quiero%20activar%20la%20prueba%20gratuita%20de%2060%20d%C3%ADas%20del%20plan%20Lite.%20Mis%20datos%20son:%20">Solicitá tu prueba gratuita</a>
+    </div>
+
+    <h2>Planes de suscripción</h2>
+    <p class="note">Precios de referencia (Argentina 2025), facturación en USD. Podés cambiar de plan cuando quieras.</p>
+
+    <div class="grid">
+      <!-- LITE -->
+      <article class="card lite">
+        <div class="badge">60 días gratis</div>
+        <div class="card-inner">
+          <h3>Lite</h3>
+          <div class="micro">Ideal para profesionales y pequeñas consultoras</div>
+          <div class="price">USD 600 <small>/ mes</small></div>
+          <ul>
+            <li><b>Frecuencia:</b> mensual</li>
+            <li><b>Incluye:</b> probabilidad de crisis, alarmas activas, métricas básicas</li>
+            <li><b>Entrega:</b> reporte en Excel con semáforo y glosario</li>
+          </ul>
+          <div class="trial">Prueba de 60 días (Lite), sin compromiso</div>
+        </div>
+        <div class="cta-bottom">
+          <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Prueba%20gratuita%2060%20d%C3%ADas%20-%20SMS%20Enterprise&body=Hola%20Santiago,%20quiero%20activar%20la%20prueba%20gratuita%20de%2060%20d%C3%ADas%20del%20plan%20Lite.%20Mis%20datos%20son:%20">Solicitá tu prueba gratuita</a>
+        </div>
+      </article>
+
+      <!-- PREMIUM (centro + glow) -->
+      <article class="card premium glow">
+        <div class="badge badge-blue">Personalizado</div>
+        <div class="card-inner">
+          <h3>Premium</h3>
+          <div class="micro">Hecho para instituciones y gestores de riesgo</div>
+          <div class="price">USD 2.500 <small>/ mes</small></div>
+          <ul>
+            <li><b>Frecuencia:</b> semanal</li>
+            <li><b>Incluye:</b> calibración personalizada (falsos positivos, persistencia), funciones de costo</li>
+            <li><b>Soporte:</b> soporte directo y reuniones mensuales breves</li>
+          </ul>
+        </div>
+        <div class="cta-bottom">
+          <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Propuesta%20Plan%20Premium%20-%20SMS%20Enterprise&body=Hola%20Santiago,%20quiero%20una%20propuesta%20del%20plan%20Premium%20de%20SMS%20Enterprise.%20Mis%20datos%20son:%20">Solicitar propuesta Premium</a>
+        </div>
+      </article>
+
+      <!-- PRO -->
+      <article class="card pro">
+        <div class="card-inner">
+          <h3>Pro</h3>
+          <div class="micro">Diseñado para equipos económicos y mesas de dinero</div>
+          <div class="price">USD 1.000 <small>/ mes</small></div>
+          <ul>
+            <li><b>Frecuencia:</b> quincenal</li>
+            <li><b>Incluye:</b> explicación de alarmas (por qué se activan) y drivers macro</li>
+            <li><b>Entrega:</b> informe ejecutivo con lectura económica y alerta corta entre reportes</li>
+          </ul>
+        </div>
+        <div class="cta-bottom">
+          <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Consulta%20Plan%20Pro%20-%20SMS%20Enterprise&body=Hola%20Santiago,%20quiero%20hablar%20sobre%20el%20plan%20Pro%20de%20SMS%20Enterprise.%20Mis%20datos%20son:%20">Quiero hablar del plan Pro</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="footer">
+      © 2025 — SMS Enterprise · Signal Matrix for Shocks — Argentina ·
+      <a href="mailto:santiagowickham@gmail.com">santiagowickham@gmail.com</a>
+    </div>
+  </div>
+</body>
+</html>
