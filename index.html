@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SMS ENTERPRISE – Signal Matrix for Shocks</title>
 
-  <!-- SEO -->
+  <!-- SEO básico -->
   <meta name="description" content="SMS ENTERPRISE estima la probabilidad de tensiones cambiarias (H≤6m). Señales transparentes y accionables para bancos, inversores y organismos públicos.">
   <link rel="canonical" href="https://santiagowickham.github.io/" />
   <meta name="theme-color" content="#0f172a" />
@@ -22,97 +22,131 @@
 
   <!-- JSON-LD -->
   <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Organization","name":"SMS ENTERPRISE",
-    "url":"https://santiagowickham.github.io/",
-    "logo":"https://santiagowickham.github.io/logo_sms_enterprise_claro.png",
-    "contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"SMSENTERPRISEDEV@gmail.com"}]
-  }</script>
+    "@context":"https://schema.org","@type":"Organization","name":"SMS ENTERPRISE","url":"https://santiagowickham.github.io/","logo":"https://santiagowickham.github.io/logo_sms_enterprise_claro.png","contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"SMSENTERPRISEDEV@gmail.com"}]}
+  </script>
   <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"WebSite","name":"SMS ENTERPRISE","url":"https://santiagowickham.github.io/"
-  }</script>
+    "@context":"https://schema.org","@type":"WebSite","name":"SMS ENTERPRISE","url":"https://santiagowickham.github.io/"}
+  </script>
   <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"Product","name":"SMS ENTERPRISE",
-    "description":"Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses.",
-    "brand":{"@type":"Brand","name":"SMS ENTERPRISE"},
-    "offers":[
-      {"@type":"Offer","name":"Lite","price":"600","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Pro","price":"1100","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Premium","price":"2500","priceCurrency":"USD"}
-    ]
-  }</script>
+    "@context":"https://schema.org","@type":"Product","name":"SMS ENTERPRISE","description":"Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses.","brand":{"@type":"Brand","name":"SMS ENTERPRISE"},"offers":[{"@type":"Offer","name":"Lite","price":"600","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"1100","priceCurrency":"USD"},{"@type":"Offer","name":"Premium","price":"2500","priceCurrency":"USD"}]}
+  </script>
 
   <style>
-    /* ===== Tema oscuro fijo ===== */
     :root{
       --bg:#0f172a; --text:#e5e7eb; --muted:#94a3b8;
       --brand:#2563eb; --brand-2:#1d4ed8; --accent:#38bdf8;
       --card:#0b1226; --card-border:#1f2a44; --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:18px;
     }
-    @media (prefers-reduced-motion: reduce) { *{animation:none!important;transition:none!important;scroll-behavior:auto!important} }
+    /* Respeto preferencias: si el usuario pide menos movimiento, apago todo */
+    @media (prefers-reduced-motion: reduce) { *{animation:none!important;transition:none!important} }
 
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:#93c5fd;text-decoration:none}
+    a{color:#93c5fd}
     .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 
-    /* ===== Navbar ===== */
-    .navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    /* NAVBAR */
+    .navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
     .nav-left{display:flex;align-items:center;gap:10px}
     .nav-left img{height:34px;width:auto}
     .nav-links{display:none;gap:14px}
     .nav-cta{display:flex;gap:10px}
-    @media(min-width:880px){.nav-links{display:flex}}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:650;border:1px solid transparent;line-height:1;transition:transform .2s ease, filter .2s ease}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:650;text-decoration:none;border:1px solid transparent;line-height:1;transition:transform .2s ease, filter .2s ease}
     .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
-    .btn-ghost{border:1px solid var(--card-border);color:#e5e7eb;background:rgba(255,255,255,.02)}
-    .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
-    .btn:active{transform:translateY(0)}
+    .btn-ghost{border:1px solid var(--card-border);color:#e5e7eb}
+    .btn-primary:hover,.btn-ghost:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .btn:active{transform:translateY(1px)}
+    @media(min-width:880px){.nav-links{display:flex}}
 
-    /* ===== Hero ===== */
-    .hero{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:42px 0 0}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.25fr .85fr;gap:24px;align-items:center;padding:42px 0 26px}
+    @media(max-width:1200px){.hero{grid-template-columns:1fr}}
     h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:10px 0 6px;font-weight:900}
     .gradient{background:linear-gradient(92deg,#93c5fd,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .subtitle{font-size:clamp(16px,2.4vw,20px);color:#cbd5e1;margin:0 0 10px}
     .lead{color:#a8b3c7;max-width:70ch}
 
-    /* ===== KPIs legibles ===== */
+    /* HERO VISUAL: ahora NUNCA se corta el contenido */
+    .hero-visual{
+      position:relative;background:var(--card);border:1px solid var(--card-border);
+      border-radius:16px;display:flex;align-items:center;justify-content:center;/*
+      */padding:24px; /* + padding para respiración */
+      overflow:visible; /* antes: hidden → podía recortar el pipeline */
+    }
+    /* textura + barrido dinámico */
+    .hero-visual::before{
+      content:"";position:absolute;inset:0;background:
+        radial-gradient(1000px 300px at 20% -10%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(800px 300px at 120% 120%, rgba(56,189,248,.14), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 42px);
+      pointer-events:none
+    }
+    .hero-visual::after{
+      content:"";position:absolute;inset:-40% 0 0 0;background:linear-gradient(90deg, rgba(96,165,250,.12), rgba(59,130,246,.0));
+      filter:blur(30px);transform:translateX(-100%);animation:bg-sweep 6s linear infinite;
+      pointer-events:none
+    }
+    @keyframes bg-sweep { to{ transform:translateX(120%)} }
+
+    /* Pipeline — quepa SIEMPRE: wrap + reducción responsiva */
+    .pipeline{position:relative;display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;max-width:100%}
+    .pill{
+      padding:16px 18px;border:1px solid var(--card-border);background:rgba(13,22,44,.85);
+      border-radius:16px;min-width:180px;text-align:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+      animation:pillGlow 6s ease-in-out infinite; will-change:transform, box-shadow
+    }
+    .pill.step-1{animation-delay:0s}
+    .pill.step-2{animation-delay:1.2s}
+    .pill.step-3{animation-delay:2.4s}
+    @keyframes pillGlow{
+      0%,70%,100%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.02), 0 0 0 rgba(56,189,248,0)}
+      10%,20%{box-shadow:0 0 0 0 rgba(56,189,248,.45), 0 0 24px 8px rgba(56,189,248,.16)}
+    }
+    .pill b{display:block;font-size:15px;letter-spacing:.2px;color:#e8efff}
+    .pill small{display:block;color:#9fb3d9;font-size:12px;margin-top:5px}
+    .ico{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;margin-bottom:8px}
+    .ico.d{background:#1d4ed8}
+    .ico.p{background:#0891b2}
+    .ico.a{background:#60a5fa}
+
+    /* chevrons animados */
+    .chevrons{display:flex;gap:10px;align-items:center}
+    .chev{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:14px solid #60a5fa;opacity:.35}
+    .chev:nth-child(1){animation:chev 1.2s linear infinite}
+    .chev:nth-child(2){animation:chev 1.2s linear .2s infinite}
+    .chev:nth-child(3){animation:chev 1.2s linear .4s infinite}
+    @keyframes chev{ 0%{transform:translateX(-6px);opacity:.15} 40%{opacity:.55} 100%{transform:translateX(6px);opacity:.15} }
+
+    /* KPI strip */
     .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
-    .kpi{background:linear-gradient(180deg,#121c36,#0b1226);border:1px solid #2a3a63;border-radius:14px;padding:14px;box-shadow:0 6px 16px rgba(0,0,0,.25);transition:transform .25s ease, box-shadow .25s ease}
-    .kpi:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.4)}
-    .kpi b{display:block;font-size:12px;color:#c6d1e6;letter-spacing:.2px;margin-bottom:6px}
+    .kpi{background:linear-gradient(180deg,#121c36,#0b1226);border:1px solid #2a3a63;border-radius:14px;padding:14px; position:relative}
+    .kpi .kpi-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .kpi .kpi-head .dot{width:8px;height:8px;border-radius:999px;background:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.18)}
+    .kpi b{font-size:12px;color:#b7c2d8;letter-spacing:.2px}
     .kpi .value{font-size:20px;font-weight:800;color:#fff}
     .kpi.metrics .value{display:none}
     .chips{display:flex;gap:8px;flex-wrap:wrap}
     .chip{font-size:12px;font-weight:700;border:1px solid #2a3a63;background:#0e1933;border-radius:999px;padding:6px 10px;color:#dce6ff}
     @media(max-width:880px){.kpis{grid-template-columns:repeat(2,1fr)}}
 
-    /* ===== Pipeline (sección propia, full width) ===== */
-    .pipe-section{margin-top:26px}
-    .pipe-wrap{border:1px solid var(--card-border);border-radius:16px;background:linear-gradient(180deg,#0f1d3b,#0b152d);box-shadow:var(--shadow);padding:14px}
-    .pipeline{display:flex;gap:18px;align-items:center;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px}
-    .pipeline::-webkit-scrollbar{height:10px}
-    .pipeline::-webkit-scrollbar-thumb{background:#1f2a44;border-radius:999px}
-    .p-step{min-width:240px;flex:0 0 240px;background:rgba(255,255,255,.02);border:1px solid #223258;border-radius:16px;padding:16px 14px;text-align:center;scroll-snap-align:center;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .3s ease, box-shadow .3s ease}
-    .p-step:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.35)}
-    .p-dot{width:16px;height:16px;border-radius:50%;margin:0 auto 6px;background:#38bdf8;box-shadow:0 0 0 0 rgba(56,189,248,.55);animation:pulse 2s infinite}
-    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(56,189,248,.55)}70%{box-shadow:0 0 0 10px rgba(56,189,248,0)}100%{box-shadow:0 0 0 0 rgba(56,189,248,0)}}
-    .p-title{font-weight:800;margin:4px 0}
-    .p-sub{font-size:12px;color:#a8b3c7;margin-top:4px}
-    .p-arrow{flex:0 0 46px;display:flex;justify-content:center;align-items:center;opacity:.9}
-    .p-arrow::before{content:"";width:0;height:0;border-left:12px solid #4a78f0;border-top:8px solid transparent;border-bottom:8px solid transparent;filter:drop-shadow(0 0 6px rgba(73,120,240,.35));animation:arrowBlink 1.6s infinite}
-    @keyframes arrowBlink{0%,100%{transform:translateX(0);opacity:.4}50%{transform:translateX(4px);opacity:1}}
-
-    /* ===== Secciones generales ===== */
+    /* Secciones */
     section{padding:26px 0}
     h2{margin:8px 0 12px;font-size:clamp(22px,3.5vw,28px)}
     .note{color:var(--muted);font-size:14px;margin:0 0 14px}
 
-    /* ===== Cards / Planes ===== */
+    /* Pasos */
+    .steps{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .step{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:18px;transition:transform .25s ease, box-shadow .25s ease}
+    .step:hover{transform:translateY(-3px);box-shadow:0 10px 18px rgba(0,0,0,.25)}
+    .step h3{margin:0 0 6px;font-size:18px}
+    @media(max-width:980px){.steps{grid-template-columns:1fr}}
+
+    /* Planes */
     .grid{display:grid;gap:18px}
     @media(min-width:980px){ .grid{grid-template-columns:1fr 1fr 1fr} }
     .card{position:relative;border:1px solid var(--card-border);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:430px;transition:transform .25s ease, box-shadow .25s ease}
-    .card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.4)}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(0,0,0,.35)}
     .card-inner{display:flex;flex-direction:column;gap:10px;padding:22px;flex:1}
     .card h3{margin:0;font-size:22px}
     .micro{color:#94a3b8;font-size:13px;margin-top:2px}
@@ -125,36 +159,55 @@
     @media(min-width:980px){ .premium{transform:scale(1.02)} }
     .badge{position:absolute;top:14px;right:14px;background:linear-gradient(90deg,#60a5fa,#2563eb);color:#071026;border:1px solid #1f3aa4;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
 
-    /* ===== Tabla comparativa ===== */
+    /* Comparativa */
     .compare{margin-top:14px;border:1px solid var(--card-border);border-radius:14px;overflow:auto}
     table{width:100%;border-collapse:collapse}
     th,td{padding:12px 10px;border-bottom:1px solid var(--card-border);text-align:left}
     th{background:#0c152b}
 
-    /* ===== Evidencia (mejor para PNG con negro) ===== */
-    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    /* Evidencia — mejora visual de imágenes con fondo negro */
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media(max-width:880px){.gallery{grid-template-columns:1fr}}
-    .ev-card{position:relative;background:radial-gradient(80% 120% at 20% 10%,#131f3d 0,#0c142a 50%,#0b1226 100%);border:1px solid #213059;border-radius:14px;padding:10px;box-shadow:0 12px 32px rgba(0,0,0,.45);transition:transform .3s ease, box-shadow .3s ease}
-    .ev-card:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(0,0,0,.5)}
-    .ev-card::after{content:"";position:absolute;inset:-1px;border-radius:16px;padding:1px;background:linear-gradient(90deg,rgba(96,165,250,.25),rgba(37,99,235,.15));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-    .evidence-img{display:block;width:100%;height:auto;border-radius:10px;filter:brightness(1.07) contrast(1.06) saturate(1.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);cursor:pointer}
-    .ev-caption{margin-top:8px;font-size:12px;color:#b5c1d6}
 
-    /* ===== FAQ ===== */
+    .frame{position:relative;border-radius:14px;background:linear-gradient(180deg,#0e162e,#0b1226);border:1px solid #223456;box-shadow:0 12px 30px rgba(0,0,0,.35);padding:12px}
+    .frame::after{ /* sutil grano para evitar "plano" absoluto */
+      content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;opacity:.25;
+      background:radial-gradient(200px 50px at 10% 0%, rgba(59,130,246,.12), transparent 60%),
+                 radial-gradient(200px 50px at 100% 100%, rgba(56,189,248,.08), transparent 60%)
+    }
+    .frame img{display:block;width:100%;height:auto;border-radius:10px; /* separo el negro del borde */
+      background:#0b1226; /* "passe-partout" neutro */
+      outline:1px solid rgba(255,255,255,.06); /* línea técnica */
+      padding:4px; image-rendering:-webkit-optimize-contrast; -ms-interpolation-mode:nearest-neighbor
+    }
+    .frame:hover{box-shadow:0 18px 36px rgba(0,0,0,.45);transform:translateY(-2px);transition:transform .25s ease, box-shadow .25s ease}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:60}
+    .modal.open{display:flex}
+    .modal-inner{background:var(--bg);border:1px solid var(--card-border);border-radius:12px;max-width:min(96vw,1100px);max-height:90vh;overflow:auto}
+    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--card-border)}
+    .modal-body{padding:14px}
+    .close{background:none;border:1px solid var(--card-border);color:#cbd5e1;border-radius:10px;padding:6px 10px;cursor:pointer}
+
+    /* FAQ */
     .faq{border:1px solid var(--card-border);border-radius:14px;overflow:hidden}
     .faq-item{border-top:1px solid var(--card-border)}
     .faq-btn{width:100%;text-align:left;background:#0c152b;color:#e5e7eb;border:0;padding:14px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
     .faq-panel{display:none;padding:12px 16px;background:#0b1226}
 
-    /* Cookie banner */
-    .cookie{position:fixed;bottom:18px;left:18px;right:18px;z-index:70;background:#0b1226;border:1px solid var(--card-border);border-radius:14px;padding:12px;display:none;gap:10px;align-items:center;justify-content:space-between}
+    /* Cookies */
+    .cookie{position:fixed;bottom:18px;left:18px;right:18px;z-index:70;background:#0b1226;border:1px solid var(--card-border);border-radius:14px;padding:12px;display:none}
 
     /* Footer */
     .footer{margin:28px 0 40px;border-top:1px solid var(--card-border);padding-top:16px;text-align:center;color:#cbd5e1;font-size:14px}
 
-    /* ===== Reveal on scroll ===== */
-    .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.show{opacity:1;transform:translateY(0)}
+    /* === Animaciones suaves de página (scroll-reveal) === */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+    .reveal.left{transform:translateX(-16px)}
+    .reveal.right{transform:translateX(16px)}
+    .reveal.in.left,.reveal.in.right{transform:none}
   </style>
 </head>
 <body>
@@ -179,22 +232,18 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="wrap hero" role="banner">
-    <div class="reveal show">
+    <div class="reveal left">
       <h1>SMS ENTERPRISE – <span class="gradient">Signal Matrix for Shocks</span></h1>
       <p class="subtitle">Anticipá el riesgo cambiario con SMS ENTERPRISE.</p>
       <p class="lead">Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses. Diseñado para bancos, inversores y organismos públicos: convierte señales macro-financieras en una probabilidad única, transparente y accionable.</p>
 
       <!-- KPIs -->
-      <div class="kpis" aria-label="Indicadores clave">
-        <div class="kpi"><b>Horizonte</b><div class="value">H≤6 meses</div></div>
-        <div class="kpi"><b>Cobertura histórica</b><div class="value">2006–2025</div></div>
-        <div class="kpi metrics">
-          <b>Métricas</b>
-          <div class="chips"><span class="chip">AUC 95.6%</span><span class="chip">AP 81.1%</span><span class="chip">Brier 6–15%</span></div>
-        </div>
-        <div class="kpi"><b>Último release</b><div class="value">2024-12-31</div></div>
+      <div class="kpis">
+        <div class="kpi reveal"><div class="kpi-head"><span class="dot"></span><b>Horizonte</b></div><div class="value">H≤6 meses</div></div>
+        <div class="kpi reveal"><div class="kpi-head"><span class="dot"></span><b>Cobertura histórica</b></div><div class="value">2006–2025</div></div>
+        <div class="kpi metrics reveal"><div class="kpi-head"><span class="dot"></span><b>Métricas</b></div><div class="chips"><span class="chip">AUC 95.6%</span><span class="chip">AP 81.1%</span><span class="chip">Brier 6–15%</span></div></div>
+        <div class="kpi reveal"><div class="kpi-head"><span class="dot"></span><b>Último release</b></div><div class="value">2024-12-31</div></div>
       </div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap" role="group" aria-label="Acciones principales">
@@ -202,41 +251,39 @@
         <a class="btn btn-ghost" href="mailto:SMSENTERPRISEDEV@gmail.com?subject=Prueba%2060%20d%C3%ADas%20Lite">Prueba 60 días</a>
       </div>
     </div>
-  </header>
 
-  <!-- PIPELINE a ancho completo (evita recortes) -->
-  <section class="wrap pipe-section reveal" aria-label="Pipeline: Datos → Probabilidad → Alertas">
-    <div class="pipe-wrap">
-      <div class="pipeline" id="pipeline">
-        <div class="p-step">
-          <div class="p-dot"></div>
-          <div class="p-title">Datos</div>
-          <div class="p-sub">ingesta segura</div>
+    <!-- Pipeline animado: ahora visible y adaptable -->
+    <div class="hero-visual reveal right" aria-label="Flujo simplificado: Datos → Probabilidad → Alertas">
+      <div class="pipeline" aria-hidden="true">
+        <div class="pill step-1">
+          <div class="ico d"></div>
+          <b>Datos</b>
+          <small>ingesta segura</small>
         </div>
-        <div class="p-arrow" aria-hidden="true"></div>
-        <div class="p-step">
-          <div class="p-dot" style="background:#20b2d6"></div>
-          <div class="p-title">Probabilidad</div>
-          <div class="p-sub">calibración</div>
+        <div class="chevrons"><span class="chev"></span><span class="chev"></span><span class="chev"></span></div>
+        <div class="pill step-2">
+          <div class="ico p"></div>
+          <b>Probabilidad</b>
+          <small>calibración</small>
         </div>
-        <div class="p-arrow" aria-hidden="true"></div>
-        <div class="p-step">
-          <div class="p-dot" style="background:#4f86ff"></div>
-          <div class="p-title">Alertas</div>
-          <div class="p-sub">bandas/umbrales</div>
+        <div class="chevrons"><span class="chev"></span><span class="chev"></span><span class="chev"></span></div>
+        <div class="pill step-3">
+          <div class="ico a"></div>
+          <b>Alertas</b>
+          <small>bandas/umbrales</small>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
   <main class="wrap">
     <!-- Cómo funciona -->
     <section id="como" aria-labelledby="como-title" class="reveal">
       <h2 id="como-title">Cómo funciona</h2>
-      <div class="grid">
-        <article class="card"><div class="card-inner"><h3>1) Calibra modelo</h3><p>Ajuste honesto con freeze DEV/HOLDOUT y validación temporal. Calibración acorde al perfil.</p></div></article>
-        <article class="card"><div class="card-inner"><h3>2) Analiza señales</h3><p>Interpretación macro-financiera para sintetizar en una probabilidad única.</p></div></article>
-        <article class="card"><div class="card-inner"><h3>3) Bandas y alertas</h3><p>Umbrales robustos y persistencia para Watch / Warning / Action.</p></div></article>
+      <div class="steps">
+        <div class="step"><h3>1) Calibra modelo</h3><p>Ajuste honesto con freeze DEV/HOLDOUT y validación temporal. Calibración acorde al perfil.</p></div>
+        <div class="step"><h3>2) Analiza señales</h3><p>Interpretación macro-financiera para sintetizar en una probabilidad única.</p></div>
+        <div class="step"><h3>3) Bandas y alertas</h3><p>Umbrales robustos y persistencia para Watch / Warning / Action.</p></div>
       </div>
     </section>
 
@@ -244,7 +291,6 @@
     <section id="planes" aria-labelledby="planes-title" class="reveal">
       <h2 id="planes-title">Planes y precios</h2>
       <p class="note">Precios de referencia (Argentina 2025), expresados en USD. No incluyen impuestos.</p>
-
       <div class="grid" role="list" aria-label="Lista de planes">
         <article class="card" role="listitem" aria-labelledby="plan-lite">
           <div class="card-inner">
@@ -293,21 +339,22 @@
         </article>
       </div>
 
-      <div class="compare" aria-label="Tabla comparativa de planes" style="margin-top:18px">
+      <!-- Comparativa -->
+      <div class="compare" aria-label="Tabla comparativa de planes">
         <table>
           <thead><tr><th>Feature</th><th>Lite</th><th>Pro</th><th>Premium</th></tr></thead>
-        <tbody>
-          <tr><td>Frecuencia</td><td>Mensual</td><td>Quincenal</td><td>Semanal</td></tr>
-          <tr><td>Probabilidad & Alarmas</td><td>✔</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Métricas básicas</td><td>✔</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Excel con semáforo</td><td>✔</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Drivers y explicación de alertas</td><td>—</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Perfiles de riesgo ajustables</td><td>—</td><td>✔</td><td>✔</td></tr>
-          <tr><td>Calibración costo/beneficio & FPR</td><td>—</td><td>—</td><td>✔</td></tr>
-          <tr><td>Soporte directo + reunión mensual</td><td>—</td><td>—</td><td>✔</td></tr>
-          <tr><td>Informe de situación mensual</td><td>—</td><td>—</td><td>✔</td></tr>
-          <tr><td>Prueba Lite 60 días (registro)</td><td>✔</td><td>✔</td><td>✔</td></tr>
-        </tbody>
+          <tbody>
+            <tr><td>Frecuencia</td><td>Mensual</td><td>Quincenal</td><td>Semanal</td></tr>
+            <tr><td>Probabilidad & Alarmas</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Métricas básicas</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Excel con semáforo</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Drivers y explicación de alarmas</td><td>—</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Perfiles de riesgo ajustables</td><td>—</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Calibración costo/beneficio & FPR</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Soporte directo + reunión mensual</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Informe de situación mensual</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Prueba Lite 60 días (registro)</td><td>✔</td><td>✔</td><td>✔</td></tr>
+          </tbody>
         </table>
       </div>
     </section>
@@ -316,16 +363,9 @@
     <section id="evidencia" aria-labelledby="evidencia-title" class="reveal">
       <h2 id="evidencia-title">Evidencia</h2>
       <p class="note">Probabilidad histórica y comparación de perfiles (desempeño).</p>
-
       <div class="gallery">
-        <figure class="ev-card">
-          <img class="evidence-img" src="./evidencia_1.png" alt="Probabilidad de crisis histórica" data-open="img1" loading="lazy">
-          <figcaption class="ev-caption">Probabilidad histórica (H≤6m) con bandas de Watch/Warning/Action.</figcaption>
-        </figure>
-        <figure class="ev-card">
-          <img class="evidence-img" src="./evidencia_2.png" alt="Comparación de perfiles y desempeño" data-open="img2" loading="lazy">
-          <figcaption class="ev-caption">Comparación de perfiles por FPR objetivo (conservador, balanceado, agresivo).</figcaption>
-        </figure>
+        <figure class="frame"><img src="./evidencia_1.png" alt="Probabilidad de crisis histórica" data-open="img1" loading="lazy"></figure>
+        <figure class="frame"><img src="./evidencia_2.png" alt="Comparación de perfiles y desempeño" data-open="img2" loading="lazy"></figure>
       </div>
     </section>
 
@@ -350,7 +390,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false" aria-controls="p2" id="q2">¿Cómo se interpretan las bandas (Watch/Warning/Action)?<span>+</span></button>
-          <div class="faq-panel" id="p2" role="region" aria-labelledby="q2"><p>Watch: monitoreo reforzado; Warning: preparación táctica; Action: medidas operativas cuando la probabilidad supera umbrales/persistencia definidos.</p></div>
+          <div class="faq-panel" id="p2" role="region" aria-labelledby="q2"><p>Watch: monitoreo reforzado; Warning: preparación táctica; Action: medidas operativas (según política de cada institución) cuando la probabilidad supera umbrales/persistencia definidos.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false" aria-controls="p3" id="q3">¿Cómo calibran falsos positivos vs. sensibilidad?<span>+</span></button>
@@ -362,7 +402,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false" aria-controls="p5" id="q5">¿Cómo se integra con mi flujo (Excel/Power BI)?<span>+</span></button>
-          <div class="faq-panel" id="p5" role="region" aria-labelledby="q5"><p>Entregas en Excel listas para tableros. Exportables a CSV/JSON para BI.</p></div>
+          <div class="faq-panel" id="p5" role="region" aria-labelledby="q5"><p>Entregas en Excel listas para incorporar a tableros. Opcionalmente, exportables a CSV/JSON para BI.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false" aria-controls="p6" id="q6">¿Qué pasa si los datos cambian (revisiones)?<span>+</span></button>
@@ -396,7 +436,7 @@
     </section>
   </main>
 
-  <!-- Lightbox -->
+  <!-- Modal Lightbox -->
   <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-label="Vista de evidencia">
     <div class="modal-inner">
       <div class="modal-header"><strong>Evidencia</strong><button class="close" id="closeLightbox" aria-label="Cerrar">Cerrar</button></div>
@@ -406,7 +446,7 @@
 
   <!-- Cookie banner -->
   <div class="cookie" id="cookie">
-    <span>Usamos cookies para métricas anónimas (GTM/GA).</span>
+    <span>Usamos cookies para métricas anónimas (GA). </span>
     <button class="btn btn-primary" id="cookieAccept">Aceptar</button>
   </div>
 
@@ -418,20 +458,10 @@
   <script>
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href').slice(1);
-        const el=document.getElementById(id);
-        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
-      });
+      a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}});
     });
 
-    // Reveal on scroll
-    const io=new IntersectionObserver((entries)=>{
-      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); }});
-    },{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // FAQ acordeón
+    // FAQ acordeón accesible
     document.querySelectorAll('.faq-btn').forEach(btn=>{
       btn.addEventListener('click',()=>{
         const panel=document.getElementById(btn.getAttribute('aria-controls'));
@@ -452,24 +482,44 @@
     lb.addEventListener('click',e=>{if(e.target===lb){closeLb.click();}});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('open')) closeLb.click();});
 
-    // Cookies + GTM (consentimiento)
+    // Cookie banner + Consent-managed Tagging (GTM/GA)
     const COOKIE_KEY='sms_cookie_ok';
-    const GTM_ID='GTM-PDC9CHSM'; // tu contenedor
+    const GTM_ID='GTM-PDC9CHSM';
+    const GA_ID=''; // opcional
+
     const cookie=document.getElementById('cookie');
+    const showCookie=()=>{ if(!localStorage.getItem(COOKIE_KEY)) cookie.style.display='flex'; else initTags(); };
 
     function loadGTM(id){
       window.dataLayer=window.dataLayer||[];
-      window.dataLayer.push({'event':'gtm.consentGranted'});
-      const s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtm.js?id='+id;
-      document.head.appendChild(s);
-      const ns=document.createElement('noscript'); ns.innerHTML='<iframe src="https://www.googletagmanager.com/ns.html?id='+id+'" height="0" width="0" style="display:none;visibility:hidden"></iframe>';
+      window.dataLayer.push({ 'consentGranted': true, 'event': 'gtm.consentGranted' });
+      const f=document.getElementsByTagName('script')[0];
+      const j=document.createElement('script');
+      j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+id; f.parentNode.insertBefore(j,f);
+      const ns=document.createElement('iframe');
+      ns.src='https://www.googletagmanager.com/ns.html?id='+id;
+      ns.height='0'; ns.width='0'; ns.style.display='none'; ns.style.visibility='hidden';
       document.body.appendChild(ns);
     }
-    function initTags(){ if(window.__tagsLoaded) return; window.__tagsLoaded=true; if(GTM_ID){ loadGTM(GTM_ID); } }
-    function showCookie(){ if(!localStorage.getItem(COOKIE_KEY)) cookie.style.display='flex'; else initTags(); }
-    function acceptCookie(){ localStorage.setItem(COOKIE_KEY,'1'); cookie.style.display='none'; initTags(); }
+    function loadGA(id){
+      const s=document.createElement('script'); s.async=true; s.src=`https://www.googletagmanager.com/gtag/js?id=${id}`; document.head.appendChild(s);
+      window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
+      gtag('js', new Date()); gtag('config', id);
+    }
+    function initTags(){
+      if(window.__tagsLoaded) return; window.__tagsLoaded=true;
+      if(GTM_ID){ loadGTM(GTM_ID); }
+      else if(GA_ID){ loadGA(GA_ID); }
+    }
+    const acceptCookie=()=>{ localStorage.setItem(COOKIE_KEY,'1'); cookie.style.display='none'; initTags(); };
     document.getElementById('cookieAccept').addEventListener('click',acceptCookie);
     showCookie();
+
+    // === Scroll-reveal universal y suave ===
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
