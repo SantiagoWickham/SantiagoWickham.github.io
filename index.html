@@ -52,25 +52,27 @@
     .nav-left img{height:34px;width:auto}
     .nav-links{display:none;gap:14px}
     .nav-cta{display:flex;gap:10px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:650;text-decoration:none;border:1px solid transparent;line-height:1}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:650;text-decoration:none;border:1px solid transparent;line-height:1;transition:transform .2s ease, filter .2s ease}
     .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
     .btn-ghost{border:1px solid var(--card-border);color:#e5e7eb}
-    .btn-primary:hover,.btn-ghost:hover{filter:brightness(1.06)}
+    .btn-primary:hover,.btn-ghost:hover{filter:brightness(1.06);transform:translateY(-1px)}
     .btn:active{transform:translateY(1px)}
     @media(min-width:880px){.nav-links{display:flex}}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:42px 0 26px}
-    @media(max-width:980px){.hero{grid-template-columns:1fr}}
+    .hero{display:grid;grid-template-columns:1.25fr .85fr;gap:24px;align-items:center;padding:42px 0 26px}
+    @media(max-width:1200px){.hero{grid-template-columns:1fr}}
     h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:10px 0 6px;font-weight:900}
     .gradient{background:linear-gradient(92deg,#93c5fd,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .subtitle{font-size:clamp(16px,2.4vw,20px);color:#cbd5e1;margin:0 0 10px}
     .lead{color:#a8b3c7;max-width:70ch}
 
-    /* HERO VISUAL con animación */
+    /* HERO VISUAL: ahora NUNCA se corta el contenido */
     .hero-visual{
       position:relative;background:var(--card);border:1px solid var(--card-border);
-      border-radius:16px;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden
+      border-radius:16px;display:flex;align-items:center;justify-content:center;/*
+      */padding:24px; /* + padding para respiración */
+      overflow:visible; /* antes: hidden → podía recortar el pipeline */
     }
     /* textura + barrido dinámico */
     .hero-visual::before{
@@ -87,13 +89,13 @@
     }
     @keyframes bg-sweep { to{ transform:translateX(120%)} }
 
-    .pipeline{position:relative;display:flex;gap:18px;align-items:center;padding:22px 18px}
+    /* Pipeline — quepa SIEMPRE: wrap + reducción responsiva */
+    .pipeline{position:relative;display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;max-width:100%}
     .pill{
       padding:16px 18px;border:1px solid var(--card-border);background:rgba(13,22,44,.85);
-      border-radius:16px;min-width:150px;text-align:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
-      animation:pillGlow 6s ease-in-out infinite;
+      border-radius:16px;min-width:180px;text-align:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+      animation:pillGlow 6s ease-in-out infinite; will-change:transform, box-shadow
     }
-    /* brillo secuencial por step */
     .pill.step-1{animation-delay:0s}
     .pill.step-2{animation-delay:1.2s}
     .pill.step-3{animation-delay:2.4s}
@@ -114,23 +116,15 @@
     .chev:nth-child(1){animation:chev 1.2s linear infinite}
     .chev:nth-child(2){animation:chev 1.2s linear .2s infinite}
     .chev:nth-child(3){animation:chev 1.2s linear .4s infinite}
-    @keyframes chev{
-      0%{transform:translateX(-6px);opacity:.15}
-      40%{opacity:.55}
-      100%{transform:translateX(6px);opacity:.15}
-    }
+    @keyframes chev{ 0%{transform:translateX(-6px);opacity:.15} 40%{opacity:.55} 100%{transform:translateX(6px);opacity:.15} }
 
     /* KPI strip */
     .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
-    .kpi{
-      background:linear-gradient(180deg,#121c36,#0b1226);
-      border:1px solid #2a3a63;border-radius:14px;padding:14px; position:relative
-    }
+    .kpi{background:linear-gradient(180deg,#121c36,#0b1226);border:1px solid #2a3a63;border-radius:14px;padding:14px; position:relative}
     .kpi .kpi-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
     .kpi .kpi-head .dot{width:8px;height:8px;border-radius:999px;background:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.18)}
     .kpi b{font-size:12px;color:#b7c2d8;letter-spacing:.2px}
     .kpi .value{font-size:20px;font-weight:800;color:#fff}
-    /* Métricas como chips */
     .kpi.metrics .value{display:none}
     .chips{display:flex;gap:8px;flex-wrap:wrap}
     .chip{font-size:12px;font-weight:700;border:1px solid #2a3a63;background:#0e1933;border-radius:999px;padding:6px 10px;color:#dce6ff}
@@ -143,14 +137,16 @@
 
     /* Pasos */
     .steps{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-    .step{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:18px}
+    .step{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:18px;transition:transform .25s ease, box-shadow .25s ease}
+    .step:hover{transform:translateY(-3px);box-shadow:0 10px 18px rgba(0,0,0,.25)}
     .step h3{margin:0 0 6px;font-size:18px}
     @media(max-width:980px){.steps{grid-template-columns:1fr}}
 
     /* Planes */
     .grid{display:grid;gap:18px}
     @media(min-width:980px){ .grid{grid-template-columns:1fr 1fr 1fr} }
-    .card{position:relative;border:1px solid var(--card-border);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:430px}
+    .card{position:relative;border:1px solid var(--card-border);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:430px;transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(0,0,0,.35)}
     .card-inner{display:flex;flex-direction:column;gap:10px;padding:22px;flex:1}
     .card h3{margin:0;font-size:22px}
     .micro{color:#94a3b8;font-size:13px;margin-top:2px}
@@ -169,10 +165,22 @@
     th,td{padding:12px 10px;border-bottom:1px solid var(--card-border);text-align:left}
     th{background:#0c152b}
 
-    /* Evidencia */
+    /* Evidencia — mejora visual de imágenes con fondo negro */
     .gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .gallery img{width:100%;height:auto;border:1px solid var(--card-border);border-radius:12px;cursor:pointer}
     @media(max-width:880px){.gallery{grid-template-columns:1fr}}
+
+    .frame{position:relative;border-radius:14px;background:linear-gradient(180deg,#0e162e,#0b1226);border:1px solid #223456;box-shadow:0 12px 30px rgba(0,0,0,.35);padding:12px}
+    .frame::after{ /* sutil grano para evitar "plano" absoluto */
+      content:"";position:absolute;inset:0;border-radius:14px;pointer-events:none;opacity:.25;
+      background:radial-gradient(200px 50px at 10% 0%, rgba(59,130,246,.12), transparent 60%),
+                 radial-gradient(200px 50px at 100% 100%, rgba(56,189,248,.08), transparent 60%)
+    }
+    .frame img{display:block;width:100%;height:auto;border-radius:10px; /* separo el negro del borde */
+      background:#0b1226; /* "passe-partout" neutro */
+      outline:1px solid rgba(255,255,255,.06); /* línea técnica */
+      padding:4px; image-rendering:-webkit-optimize-contrast; -ms-interpolation-mode:nearest-neighbor
+    }
+    .frame:hover{box-shadow:0 18px 36px rgba(0,0,0,.45);transform:translateY(-2px);transition:transform .25s ease, box-shadow .25s ease}
 
     /* Modal */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:60}
@@ -193,6 +201,13 @@
 
     /* Footer */
     .footer{margin:28px 0 40px;border-top:1px solid var(--card-border);padding-top:16px;text-align:center;color:#cbd5e1;font-size:14px}
+
+    /* === Animaciones suaves de página (scroll-reveal) === */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+    .reveal.left{transform:translateX(-16px)}
+    .reveal.right{transform:translateX(16px)}
+    .reveal.in.left,.reveal.in.right{transform:none}
   </style>
 </head>
 <body>
@@ -218,33 +233,17 @@
   </nav>
 
   <header class="wrap hero" role="banner">
-    <div>
+    <div class="reveal left">
       <h1>SMS ENTERPRISE – <span class="gradient">Signal Matrix for Shocks</span></h1>
       <p class="subtitle">Anticipá el riesgo cambiario con SMS ENTERPRISE.</p>
       <p class="lead">Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses. Diseñado para bancos, inversores y organismos públicos: convierte señales macro-financieras en una probabilidad única, transparente y accionable.</p>
 
       <!-- KPIs -->
-      <div class="kpis" aria-label="Indicadores clave">
-        <div class="kpi">
-          <div class="kpi-head"><span class="dot"></span><b>Horizonte</b></div>
-          <div class="value">H≤6 meses</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-head"><span class="dot"></span><b>Cobertura histórica</b></div>
-          <div class="value">2006–2025</div>
-        </div>
-        <div class="kpi metrics">
-          <div class="kpi-head"><span class="dot"></span><b>Métricas</b></div>
-          <div class="chips">
-            <span class="chip">AUC 95.6%</span>
-            <span class="chip">AP 81.1%</span>
-            <span class="chip">Brier 6–15%</span>
-          </div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-head"><span class="dot"></span><b>Último release</b></div>
-          <div class="value">2024-12-31</div>
-        </div>
+      <div class="kpis">
+        <div class="kpi reveal"><div class="kpi-head"><span class="dot"></span><b>Horizonte</b></div><div class="value">H≤6 meses</div></div>
+        <div class="kpi reveal"><div class="kpi-head"><span class="dot"></span><b>Cobertura histórica</b></div><div class="value">2006–2025</div></div>
+        <div class="kpi metrics reveal"><div class="kpi-head"><span class="dot"></span><b>Métricas</b></div><div class="chips"><span class="chip">AUC 95.6%</span><span class="chip">AP 81.1%</span><span class="chip">Brier 6–15%</span></div></div>
+        <div class="kpi reveal"><div class="kpi-head"><span class="dot"></span><b>Último release</b></div><div class="value">2024-12-31</div></div>
       </div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap" role="group" aria-label="Acciones principales">
@@ -253,29 +252,21 @@
       </div>
     </div>
 
-    <!-- Pipeline animado -->
-    <div class="hero-visual" aria-label="Flujo simplificado: Datos → Probabilidad → Alertas">
+    <!-- Pipeline animado: ahora visible y adaptable -->
+    <div class="hero-visual reveal right" aria-label="Flujo simplificado: Datos → Probabilidad → Alertas">
       <div class="pipeline" aria-hidden="true">
         <div class="pill step-1">
           <div class="ico d"></div>
           <b>Datos</b>
           <small>ingesta segura</small>
         </div>
-
-        <div class="chevrons">
-          <span class="chev"></span><span class="chev"></span><span class="chev"></span>
-        </div>
-
+        <div class="chevrons"><span class="chev"></span><span class="chev"></span><span class="chev"></span></div>
         <div class="pill step-2">
           <div class="ico p"></div>
           <b>Probabilidad</b>
           <small>calibración</small>
         </div>
-
-        <div class="chevrons">
-          <span class="chev"></span><span class="chev"></span><span class="chev"></span>
-        </div>
-
+        <div class="chevrons"><span class="chev"></span><span class="chev"></span><span class="chev"></span></div>
         <div class="pill step-3">
           <div class="ico a"></div>
           <b>Alertas</b>
@@ -287,7 +278,7 @@
 
   <main class="wrap">
     <!-- Cómo funciona -->
-    <section id="como" aria-labelledby="como-title">
+    <section id="como" aria-labelledby="como-title" class="reveal">
       <h2 id="como-title">Cómo funciona</h2>
       <div class="steps">
         <div class="step"><h3>1) Calibra modelo</h3><p>Ajuste honesto con freeze DEV/HOLDOUT y validación temporal. Calibración acorde al perfil.</p></div>
@@ -297,7 +288,7 @@
     </section>
 
     <!-- Planes -->
-    <section id="planes" aria-labelledby="planes-title">
+    <section id="planes" aria-labelledby="planes-title" class="reveal">
       <h2 id="planes-title">Planes y precios</h2>
       <p class="note">Precios de referencia (Argentina 2025), expresados en USD. No incluyen impuestos.</p>
       <div class="grid" role="list" aria-label="Lista de planes">
@@ -339,7 +330,7 @@
             <div class="price">USD 1.100 <small>/ mes</small></div>
             <ul>
               <li><b>Frecuencia:</b> quincenal</li>
-              <li><b>Incluye:</b> drivers, explicación de alarmas y perfiles de riesgo ajustables</li>
+              <li><b>Incluye:</b> drivers, explicación de alertas y perfiles de riesgo ajustables</li>
               <li><b>Entrega:</b> Excel con análisis de alertas y métricas avanzadas</li>
               <li><b>Prueba:</b> acceso a prueba Lite de 60 días</li>
             </ul>
@@ -369,17 +360,17 @@
     </section>
 
     <!-- Evidencia -->
-    <section id="evidencia" aria-labelledby="evidencia-title">
+    <section id="evidencia" aria-labelledby="evidencia-title" class="reveal">
       <h2 id="evidencia-title">Evidencia</h2>
       <p class="note">Probabilidad histórica y comparación de perfiles (desempeño).</p>
       <div class="gallery">
-        <img src="./evidencia_1.png" alt="Probabilidad de crisis histórica" data-open="img1" loading="lazy">
-        <img src="./evidencia_2.png" alt="Comparación de perfiles y desempeño" data-open="img2" loading="lazy">
+        <figure class="frame"><img src="./evidencia_1.png" alt="Probabilidad de crisis histórica" data-open="img1" loading="lazy"></figure>
+        <figure class="frame"><img src="./evidencia_2.png" alt="Comparación de perfiles y desempeño" data-open="img2" loading="lazy"></figure>
       </div>
     </section>
 
     <!-- Gobierno de modelo -->
-    <section aria-labelledby="gov-title">
+    <section aria-labelledby="gov-title" class="reveal">
       <h2 id="gov-title">Gobierno de modelo</h2>
       <ul>
         <li><b>Freeze DEV/HOLDOUT</b> y evaluación out-of-sample.</li>
@@ -390,7 +381,7 @@
     </section>
 
     <!-- FAQs -->
-    <section id="faq" aria-labelledby="faq-title">
+    <section id="faq" aria-labelledby="faq-title" class="reveal">
       <h2 id="faq-title">Preguntas frecuentes</h2>
       <div class="faq" role="tablist">
         <div class="faq-item">
@@ -425,7 +416,7 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" aria-labelledby="contacto-title">
+    <section id="contacto" aria-labelledby="contacto-title" class="reveal">
       <h2 id="contacto-title">Contacto</h2>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn btn-primary" href="mailto:SMSENTERPRISEDEV@gmail.com?subject=Demo%20SMS%20Enterprise">Agendá una demo</a>
@@ -435,11 +426,11 @@
     </section>
 
     <!-- Políticas -->
-    <section id="privacidad" aria-labelledby="priv-title">
+    <section id="privacidad" aria-labelledby="priv-title" class="reveal">
       <h2 id="priv-title">Política de Privacidad</h2>
       <p>Recopilamos únicamente la información de contacto que nos enviás voluntariamente por correo. No compartimos tus datos con terceros. Podés solicitar acceso o eliminación escribiendo a <a href="mailto:SMSENTERPRISEDEV@gmail.com">SMSENTERPRISEDEV@gmail.com</a>.</p>
     </section>
-    <section id="terminos" aria-labelledby="term-title">
+    <section id="terminos" aria-labelledby="term-title" class="reveal">
       <h2 id="term-title">Términos de Servicio</h2>
       <p>Los precios publicados son de referencia para Argentina (USD, sin impuestos). El contenido analítico se entrega “tal como es” con metodología documentada y versionada. Cualquier decisión basada en los reportes es responsabilidad del cliente.</p>
     </section>
@@ -523,7 +514,12 @@
     const acceptCookie=()=>{ localStorage.setItem(COOKIE_KEY,'1'); cookie.style.display='none'; initTags(); };
     document.getElementById('cookieAccept').addEventListener('click',acceptCookie);
     showCookie();
+
+    // === Scroll-reveal universal y suave ===
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
-  
