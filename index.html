@@ -3,62 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SMS Enterprise — Anticipá el riesgo cambiario</title>
+  <title>SMS ENTERPRISE – Signal Matrix for Shocks</title>
 
   <!-- SEO básico -->
-  <meta name="description" content="SMS Enterprise estima la probabilidad de tensiones cambiarias a 6 meses para bancos, inversores y organismos públicos. Señales transparentes y accionables.">
-  <link rel="canonical" href="https://github.com/SantiagoWickham/SantiagoWickham.github.io/" />
+  <meta name="description" content="SMS ENTERPRISE estima la probabilidad de tensiones cambiarias (H≤6m). Señales transparentes y accionables para bancos, inversores y organismos públicos.">
+  <link rel="canonical" href="https://santiagowickham.github.io/" />
   <meta name="theme-color" content="#0f172a" />
+  <meta name="robots" content="index,follow" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="./logo_sms_enterprise_pag.png" sizes="any" />
+  <!-- Favicon / OG -->
+  <link rel="icon" href="./logo_sms_enterprise_claro.png" sizes="any" />
+  <meta property="og:title" content="SMS ENTERPRISE – Signal Matrix for Shocks" />
+  <meta property="og:description" content="Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://santiagowickham.github.io/logo_sms_enterprise_claro.png" />
+  <meta property="og:url" content="https://santiagowickham.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="SMS Enterprise — Anticipá el riesgo cambiario">
-  <meta property="og:description" content="Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://github.com/SantiagoWickham/SantiagoWickham.github.io/logo_sms_enterprise_pag.png">
-  <meta property="og:url" content="https://github.com/SantiagoWickham/SantiagoWickham.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- JSON-LD: Organización + Sitio + Producto/ofertas -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SMS Enterprise",
-    "url": "https://github.com/SantiagoWickham/SantiagoWickham.github.io/",
-    "logo": "https://github.com/SantiagoWickham/SantiagoWickham.github.io/logo_sms_enterprise_pag.png",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "email": "santiagowickham@gmail.com"
-    }]
-  }
+  <!-- JSON-LD: Organización + Sitio + Producto/Ofertas -->
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Organization","name":"SMS ENTERPRISE","url":"https://santiagowickham.github.io/","logo":"https://santiagowickham.github.io/logo_sms_enterprise_claro.png","contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"santiagowickham@gmail.com"}]}
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SMS Enterprise",
-    "url": "https://github.com/SantiagoWickham/SantiagoWickham.github.io/"
-  }
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"WebSite","name":"SMS ENTERPRISE","url":"https://santiagowickham.github.io/"}
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "SMS Enterprise",
-    "description": "Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses.",
-    "brand": {"@type":"Brand","name":"SMS Enterprise"},
-    "offers": [{
-      "@type":"Offer","name":"Lite","price":"600","priceCurrency":"USD","availability":"https://schema.org/InStock"
-    },{
-      "@type":"Offer","name":"Pro","price":"1100","priceCurrency":"USD","availability":"https://schema.org/InStock"
-    },{
-      "@type":"Offer","name":"Premium","price":"2500","priceCurrency":"USD","availability":"https://schema.org/InStock"
-    }]
-  }
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Product","name":"SMS ENTERPRISE","description":"Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses.","brand":{"@type":"Brand","name":"SMS ENTERPRISE"},"offers":[{"@type":"Offer","name":"Lite","price":"600","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"1100","priceCurrency":"USD"},{"@type":"Offer","name":"Premium","price":"2500","priceCurrency":"USD"}]}
   </script>
 
   <style>
@@ -68,44 +38,57 @@
       --card:#0b1226; --card-border:#1f2a44; --shadow:0 10px 30px rgba(0,0,0,.35);
       --radius:18px;
     }
-
-    /* Preferencias del usuario */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-
+    @media (prefers-reduced-motion: reduce) { *{animation:none!important;transition:none!important} }
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{max-width:1100px;margin:0 auto;padding:40px 18px}
+    a{color:#93c5fd}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 
-    /* Accesibilidad: foco visible */
-    :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:8px}
-
-    /* HEADER */
-    header{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-    .logo-chip{padding:8px; display:flex; align-items:center; justify-content:center}
-    .logo-chip img{height:120px;width:auto;display:block;filter:none}
-    .brand-title{font-weight:800;letter-spacing:.2px;color:#e5e7eb;font-size:20px;line-height:1;margin-top:2px}
-    @media(min-width:980px){ .logo-chip img{height:140px} .brand-title{font-size:22px} }
-
-    /* HERO */
-    h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:14px 0 8px;font-weight:900}
-    .gradient{background:linear-gradient(92deg,#93c5fd,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .subtitle{font-size:clamp(16px,2.5vw,20px);color:#cbd5e1;margin:0 0 10px}
-    .lead{color:#a8b3c7;max-width:75ch}
-
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:650;text-decoration:none;border:1px solid transparent; line-height:1}
+    /* NAVBAR sticky */
+    .navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+    .nav-left{display:flex;align-items:center;gap:10px}
+    .nav-left img{height:34px;width:auto}
+    .nav-links{display:none;gap:14px}
+    .nav-cta{display:flex;gap:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;font-weight:650;text-decoration:none;border:1px solid transparent;line-height:1}
     .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
     .btn-ghost{border:1px solid var(--card-border);color:#cbd5e1}
     .btn-primary:hover,.btn-ghost:hover{filter:brightness(1.06)}
     .btn:active{transform:translateY(1px)}
+    @media(min-width:880px){.nav-links{display:flex}}
 
-    h2{margin:32px 0 8px;font-size:clamp(22px,3.5vw,28px)}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:42px 0 26px}
+    @media(max-width:980px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:10px 0 6px;font-weight:900}
+    .gradient{background:linear-gradient(92deg,#93c5fd,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .subtitle{font-size:clamp(16px,2.4vw,20px);color:#cbd5e1;margin:0 0 10px}
+    .lead{color:#a8b3c7;max-width:70ch}
+    .hero-visual{background:var(--card);border:1px solid var(--card-border);border-radius:16px;min-height:240px;display:flex;align-items:center;justify-content:center}
+
+    /* KPI strip */
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+    .kpi{background:#0b1226;border:1px solid var(--card-border);border-radius:12px;padding:12px}
+    .kpi b{display:block;font-size:14px;color:#cbd5e1}
+    .kpi span{font-size:18px;font-weight:800}
+    @media(max-width:880px){.kpis{grid-template-columns:repeat(2,1fr)}}
+
+    /* Secciones */
+    section{padding:26px 0}
+    h2{margin:8px 0 12px;font-size:clamp(22px,3.5vw,28px)}
     .note{color:var(--muted);font-size:14px;margin:0 0 14px}
 
-    /* PLANES */
+    /* Cómo funciona (pasos) */
+    .steps{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+    .step{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:18px}
+    .step h3{margin:0 0 6px;font-size:18px}
+    @media(max-width:980px){.steps{grid-template-columns:1fr}}
+    .diagram{margin-top:12px;border:1px dashed var(--card-border);border-radius:12px;padding:10px;display:flex;justify-content:center}
+
+    /* Planes */
     .grid{display:grid;gap:18px}
     @media(min-width:980px){ .grid{grid-template-columns:1fr 1fr 1fr} }
-    .card{position:relative;border:1px solid var(--card-border);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:440px}
+    .card{position:relative;border:1px solid var(--card-border);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:430px}
     .card-inner{display:flex;flex-direction:column;gap:10px;padding:22px;flex:1}
     .card h3{margin:0;font-size:22px}
     .micro{color:#94a3b8;font-size:13px;margin-top:2px}
@@ -113,133 +96,341 @@
     ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
     li{line-height:1.45;padding-left:22px;position:relative}
     li::before{content:"✔";position:absolute;left:0;color:#22c55e;font-weight:800}
-    .trial{margin-top:8px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:#a7f3d0;padding:10px 12px;border-radius:12px;font-weight:600}
     .cta-bottom{padding:16px 22px;border-top:1px solid var(--card-border);display:flex;justify-content:flex-start}
+    .premium{border-color:#2a59d8}
+    @media(min-width:980px){ .premium{transform:scale(1.02)} }
+    .badge{position:absolute;top:14px;right:14px;background:linear-gradient(90deg,#60a5fa,#2563eb);color:#071026;border:1px solid #1f3aa4;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
 
-    /* Orden visual */
-    .lite{order:1}
-    .premium{order:2;border-color:#2a59d8}
-    .pro{order:3}
-    @media(min-width:980px){ .premium{transform:scale(1.03)} }
+    /* Comparativa */
+    .compare{margin-top:14px;border:1px solid var(--card-border);border-radius:14px;overflow:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:12px 10px;border-bottom:1px solid var(--card-border);text-align:left}
+    th{background:#0c152b}
 
-    .badge{position:absolute;top:14px;right:14px;background:#22c55e;color:#052e16;border:1px solid #157f3b;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
-    .badge-blue{background:linear-gradient(90deg,#60a5fa,#2563eb);color:#071026;border-color:#1f3aa4}
+    /* Evidencia (galería) */
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .gallery img{width:100%;height:auto;border:1px solid var(--card-border);border-radius:12px;cursor:pointer}
+    @media(max-width:880px){.gallery{grid-template-columns:1fr}}
 
-    .glow::before{content:"";position:absolute;inset:-2px;border-radius:calc(var(--radius) + 2px);background:conic-gradient(from 0deg, rgba(37,99,235,.0), rgba(37,99,235,.35), rgba(56,189,248,.35), rgba(37,99,235,.0));filter:blur(16px);opacity:.75;z-index:-1;animation:glow 6s linear infinite}
-    @keyframes glow{to{transform:rotate(360deg)}}
+    /* Modal/Lightbox */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:60}
+    .modal.open{display:flex}
+    .modal-inner{background:var(--bg);border:1px solid var(--card-border);border-radius:12px;max-width:min(96vw,1100px);max-height:90vh;overflow:auto}
+    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--card-border)}
+    .modal-body{padding:14px}
+    .close{background:none;border:1px solid var(--card-border);color:#cbd5e1;border-radius:10px;padding:6px 10px;cursor:pointer}
+
+    /* FAQ */
+    .faq{border:1px solid var(--card-border);border-radius:14px;overflow:hidden}
+    .faq-item{border-top:1px solid var(--card-border)}
+    .faq-btn{width:100%;text-align:left;background:#0c152b;color:#e5e7eb;border:0;padding:14px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .faq-panel{display:none;padding:12px 16px;background:#0b1226}
+
+    /* Cookie banner */
+    .cookie{position:fixed;bottom:18px;left:18px;right:18px;z-index:70;background:#0b1226;border:1px solid var(--card-border);border-radius:14px;padding:12px;display:none}
 
     /* Footer */
-    .footer{margin-top:36px;border-top:1px solid var(--card-border);padding-top:16px;text-align:center;color:#cbd5e1;font-size:14px}
-    .footer a{color:#93c5fd;text-decoration:none}
+    .footer{margin:28px 0 40px;border-top:1px solid var(--card-border);padding-top:16px;text-align:center;color:#cbd5e1;font-size:14px}
 
-    /* Light theme (opcional por preferencia del usuario) */
-    @media (prefers-color-scheme: light) {
-      :root{ --bg:#ffffff; --text:#0b1226; --muted:#475569; --card:#ffffff; --card-border:#e5e7eb; }
-      body{ background:#ffffff; color:#0b1226 }
-      .footer{ color:#334155 }
-      .btn-ghost{ color:#0b1226 }
-    }
-
-    /* Impresión (PDF limpio) */
-    @media print {
-      html, body { background:#fff !important; color:#111 !important; }
-      .wrap { max-width:900px !important; padding:24px !important; }
-      .glow::before { display:none !important; }
-      .card { box-shadow:none !important; border-color:#e5e7eb !important; }
-      .cta-bottom { border-top:1px solid #e5e7eb !important; }
-      .btn, .btn-primary, .btn-ghost { background:none !important; color:#111 !important; border:1px solid #999 !important; box-shadow:none !important; }
-      .badge, .badge-blue { filter:grayscale(1); }
-      .gradient{ background:none !important; -webkit-text-fill-color:#111 !important; color:#111 !important; }
-      h1{ color:#111 !important; }
-      .subtitle, .lead { color:#333 !important; }
-      a { color:#111 !important; text-decoration:underline !important; }
-    }
+    /* Tema claro opcional según preferencia del usuario */
+   @media (prefers-color-scheme: light){:root{--bg:#ffffff;--text:#0b1226;--muted:#475569;--card:#ffffff;--card-border:#e5e7eb} .faq-btn{background:#eef2ff;color:#0b1226} .faq-panel{background:#fff}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header role="banner" aria-label="Cabecera de SMS Enterprise">
-      <div class="logo-chip">
-        <img src="./logo_sms_enterprise_pag.png" alt="Logotipo de SMS Enterprise" width="420" height="120" loading="eager" fetchpriority="high">
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="wrap nav-inner">
+      <div class="nav-left">
+        <img src="./logo_sms_enterprise_oscuro.png" alt="Logo SMS ENTERPRISE" width="160" height="34"/>
+        <strong aria-hidden="true">SMS ENTERPRISE</strong>
       </div>
-      <div class="brand-title" aria-hidden="true">SMS Enterprise</div>
-    </header>
+      <div class="nav-links" aria-label="Secciones">
+        <a href="#planes">Planes</a>
+        <a href="#como">Cómo funciona</a>
+        <a href="#evidencia">Evidencia</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Demo%20SMS%20Enterprise">Agendá una demo</a>
+        <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Propuesta%20Plan%20Premium">Solicitar propuesta Premium</a>
+      </div>
+    </div>
+  </nav>
 
-    <main id="contenido" role="main">
-      <h1>Anticipá el <span class="gradient">riesgo cambiario</span> con SMS Enterprise</h1>
-      <p class="subtitle">La señal que transforma la incertidumbre en estrategia.</p>
-      <p class="lead">SMS Enterprise — <i>Signal Matrix for Shocks</i> — es un modelo cuantitativo que estima la probabilidad de tensiones cambiarias (horizonte de 6 meses). Diseñado para bancos, inversores y organismos públicos, convierte señales macroeconómicas en una probabilidad única, transparente y accionable.</p>
-
+  <header class="wrap hero" role="banner">
+    <div>
+      <h1>SMS ENTERPRISE – <span class="gradient">Signal Matrix for Shocks</span></h1>
+      <p class="subtitle">Anticipá el riesgo cambiario con SMS ENTERPRISE.</p>
+      <p class="lead">Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses. Diseñado para bancos, inversores y organismos públicos: convierte señales macro-financieras en una probabilidad única, transparente y accionable.</p>
+      <div class="kpis" aria-label="Indicadores clave">
+        <div class="kpi"><b>Horizonte</b><span>H≤6 meses</span></div>
+        <div class="kpi"><b>Cobertura histórica</b><span>2006–2025</span></div>
+        <div class="kpi"><b>Métricas</b><span>AUC 95.6% · AP 81.1% · Brier 6–15%</span></div>
+        <div class="kpi"><b>Último release</b><span>2024-12-31</span></div>
+      </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap" role="group" aria-label="Acciones principales">
-        <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Demo%20SMS%20Enterprise&body=Hola,%20quiero%20agendar%20una%20demo%20de%20SMS%20Enterprise.%20Mis%20datos%20son:%20" aria-label="Agendar una demo por correo">Agendá una demo</a>
-        <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Prueba%20gratuita%2060%20d%C3%ADas%20-%20SMS%20Enterprise&body=Hola,%20quiero%20activar%20la%20prueba%20gratuita%20de%2060%20d%C3%ADas%20del%20plan%20Lite.%20Mis%20datos%20son:%20" aria-label="Solicitar prueba gratuita del plan Lite por correo">Solicitá tu prueba gratuita</a>
+        <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Demo%20SMS%20Enterprise">Agendá una demo</a>
+        <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Prueba%2060%20d%C3%ADas%20Lite">Prueba 60 días</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Diagrama del flujo del modelo">
+      <!-- Mini-diagrama SVG corporativo -->
+      <svg width="420" height="220" viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Señales → Probabilidad calibrada → Bandas/Alertas">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
+        </defs>
+        <rect x="10" y="20" rx="12" ry="12" width="120" height="60" fill="#0b1226" stroke="#1f2a44"/>
+        <text x="70" y="55" text-anchor="middle" fill="#e5e7eb" font-size="12">Señales</text>
+
+        <rect x="160" y="20" rx="12" ry="12" width="120" height="60" fill="#0b1226" stroke="#1f2a44"/>
+        <text x="220" y="45" text-anchor="middle" fill="#e5e7eb" font-size="12">Probabilidad</text>
+        <text x="220" y="60" text-anchor="middle" fill="#a8b3c7" font-size="10">(calibrada)</text>
+
+        <rect x="310" y="20" rx="12" ry="12" width="100" height="60" fill="#0b1226" stroke="#1f2a44"/>
+        <text x="360" y="45" text-anchor="middle" fill="#e5e7eb" font-size="12">Bandas</text>
+        <text x="360" y="60" text-anchor="middle" fill="#a8b3c7" font-size="10">& Alertas</text>
+
+        <line x1="130" y1="50" x2="160" y2="50" stroke="url(#g1)" stroke-width="3"/>
+        <line x1="280" y1="50" x2="310" y2="50" stroke="url(#g1)" stroke-width="3"/>
+
+        <!-- Iconitos -->
+        <circle cx="40" cy="110" r="10" fill="#2563eb"/>
+        <circle cx="70" cy="110" r="10" fill="#38bdf8"/>
+        <circle cx="100" cy="110" r="10" fill="#60a5fa"/>
+        <text x="70" y="135" text-anchor="middle" fill="#a8b3c7" font-size="10">NIV · SLOPE · PERS · GAP · BRK</text>
+
+        <rect x="160" y="95" rx="10" ry="10" width="120" height="36" fill="#13203f" stroke="#1f2a44"/>
+        <text x="220" y="117" text-anchor="middle" fill="#cbd5e1" font-size="11">NOISY‑OR + Isotónica</text>
+
+        <rect x="310" y="95" rx="10" ry="10" width="100" height="36" fill="#13203f" stroke="#1f2a44"/>
+        <text x="360" y="117" text-anchor="middle" fill="#cbd5e1" font-size="11">Watch/Warning/Action</text>
+      </svg>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Cómo funciona -->
+    <section id="como" aria-labelledby="como-title">
+      <h2 id="como-title">Cómo funciona</h2>
+      <div class="steps">
+        <div class="step"><h3>1) Calibra modelo</h3><p>Ajuste honesto con freeze DEV/HOLDOUT, validación temporal y calibración isotónica. Configurable por perfil.</p></div>
+        <div class="step"><h3>2) Analiza señales</h3><p>Doce series macro-financieras descompuestas en NIV, SLOPE, PERS, GAP y BRK; fusión probabilística NOISY‑OR.</p></div>
+        <div class="step"><h3>3) Bandas y alertas</h3><p>Umbrales robustos, persistencia y perfiles (Lite/Pro/Premium) con reporte claro y accionable.</p></div>
+      </div>
+      <div class="diagram" aria-hidden="true"><small>Diagrama simplificado del pipeline (arriba).</small></div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes" aria-labelledby="planes-title">
+      <h2 id="planes-title">Planes y precios</h2>
+      <p class="note">Precios de referencia (Argentina 2025), expresados en USD. No incluyen impuestos.</p>
+      <div class="grid" role="list" aria-label="Lista de planes">
+        <article class="card" role="listitem" aria-labelledby="plan-lite">
+          <div class="card-inner">
+            <h3 id="plan-lite">Lite</h3>
+            <div class="micro">Ideal para profesionales y pequeñas consultoras</div>
+            <div class="price">USD 600 <small>/ mes</small></div>
+            <ul>
+              <li><b>Frecuencia:</b> mensual</li>
+              <li><b>Incluye:</b> probabilidad, alarmas activas y métricas básicas</li>
+              <li><b>Entrega:</b> reporte en Excel con semáforo</li>
+              <li><b>Prueba:</b> incluye prueba Lite de 60 días (registro requerido)</li>
+            </ul>
+          </div>
+          <div class="cta-bottom"><a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Prueba%2060%20d%C3%ADas%20Lite">Prueba 60 días</a></div>
+        </article>
+
+        <article class="card premium" role="listitem" aria-labelledby="plan-premium">
+          <div class="badge">Recomendado</div>
+          <div class="card-inner">
+            <h3 id="plan-premium">Premium</h3>
+            <div class="micro">Hecho para instituciones y gestores de riesgo</div>
+            <div class="price">USD 2.500 <small>/ mes</small></div>
+            <ul>
+              <li><b>Frecuencia:</b> semanal</li>
+              <li><b>Incluye:</b> calibración costo/beneficio, sensibilidad y control de FPR</li>
+              <li><b>Soporte:</b> directo + reunión mensual e informe de situación</li>
+              <li><b>Prueba:</b> acceso a prueba Lite de 60 días</li>
+            </ul>
+          </div>
+          <div class="cta-bottom"><a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Propuesta%20Plan%20Premium">Solicitar propuesta Premium</a></div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="plan-pro">
+          <div class="card-inner">
+            <h3 id="plan-pro">Pro</h3>
+            <div class="micro">Para equipos económicos y mesas de dinero</div>
+            <div class="price">USD 1.100 <small>/ mes</small></div>
+            <ul>
+              <li><b>Frecuencia:</b> quincenal</li>
+              <li><b>Incluye:</b> drivers, explicación de alarmas y perfiles de riesgo ajustables</li>
+              <li><b>Entrega:</b> Excel con análisis de alertas y métricas avanzadas</li>
+              <li><b>Prueba:</b> acceso a prueba Lite de 60 días</li>
+            </ul>
+          </div>
+          <div class="cta-bottom"><a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Consulta%20Plan%20Pro">Quiero hablar del plan Pro</a></div>
+        </article>
       </div>
 
-      <section aria-labelledby="planes-title">
-        <h2 id="planes-title">Planes de suscripción</h2>
-        <p class="note">Precios de referencia (Argentina 2025), facturación en USD. Podés cambiar de plan cuando quieras.</p>
+      <!-- Comparativa -->
+      <div class="compare" aria-label="Tabla comparativa de planes">
+        <table>
+          <thead><tr><th>Feature</th><th>Lite</th><th>Pro</th><th>Premium</th></tr></thead>
+          <tbody>
+            <tr><td>Frecuencia</td><td>Mensual</td><td>Quincenal</td><td>Semanal</td></tr>
+            <tr><td>Probabilidad & Alarmas</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Métricas básicas</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Excel con semáforo</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Drivers y explicación de alarmas</td><td>—</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Perfiles de riesgo ajustables</td><td>—</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Calibración costo/beneficio & FPR</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Soporte directo + reunión mensual</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Informe de situación mensual</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Prueba Lite 60 días (registro)</td><td>✔</td><td>✔</td><td>✔</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-        <div class="grid" role="list" aria-label="Lista de planes">
-          <!-- LITE -->
-          <article class="card lite" role="listitem" aria-labelledby="plan-lite">
-            <div class="badge" aria-label="Incluye 60 días gratis">60 días gratis</div>
-            <div class="card-inner">
-              <h3 id="plan-lite">Lite</h3>
-              <div class="micro">Ideal para profesionales y pequeñas consultoras</div>
-              <div class="price" aria-label="Precio del plan Lite: 600 dólares por mes">USD 600 <small>/ mes</small></div>
-              <ul>
-                <li><b>Frecuencia:</b> mensual</li>
-                <li><b>Incluye:</b> probabilidad de crisis, alarmas activas, métricas básicas</li>
-                <li><b>Entrega:</b> reporte en Excel con semáforo de alertas</li>
-              </ul>
-              <div class="trial">Prueba de 60 días (Lite), sin compromiso</div>
-            </div>
-            <div class="cta-bottom">
-              <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Prueba%20gratuita%2060%20d%C3%ADas%20-%20SMS%20Enterprise&body=Hola,%20quiero%20activar%20la%20prueba%20gratuita%20de%2060%20d%C3%ADas%20del%20plan%20Lite.%20Mis%20datos%20son:%20" aria-label="Solicitar prueba gratuita del plan Lite por correo">Solicitá tu prueba gratuita</a>
-            </div>
-          </article>
+    <!-- Evidencia / Galería -->
+    <section id="evidencia" aria-labelledby="evidencia-title">
+      <h2 id="evidencia-title">Evidencia</h2>
+      <p class="note">Probabilidad histórica y comparación de perfiles (desempeño).</p>
+      <div class="gallery">
+        <img src="./evidencia_1.png" alt="Probabilidad de crisis histórica" data-open="img1" loading="lazy">
+        <img src="./evidencia_2.png" alt="Comparación de perfiles y desempeño" data-open="img2" loading="lazy">
+      </div>
+    </section>
 
-          <!-- PREMIUM (centro + glow) -->
-          <article class="card premium glow" role="listitem" aria-labelledby="plan-premium">
-            <div class="badge badge-blue" aria-label="Plan personalizado">Personalizado</div>
-            <div class="card-inner">
-              <h3 id="plan-premium">Premium</h3>
-              <div class="micro">Hecho para instituciones y gestores de riesgo</div>
-              <div class="price" aria-label="Precio del plan Premium: 2.500 dólares por mes">USD 2.500 <small>/ mes</small></div>
-              <ul>
-                <li><b>Frecuencia:</b> semanal</li>
-                <li><b>Incluye:</b> Pro + calibración personalizada (falsos positivos, sensibilidad, funciones de costo y más)</li>
-                <li><b>Soporte:</b> soporte directo, informe de situación y reunión mensual breve</li>
-              </ul>
-            </div>
-            <div class="cta-bottom">
-              <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Propuesta%20Plan%20Premium%20-%20SMS%20Enterprise&body=Hola,%20quiero%20una%20propuesta%20del%20plan%20Premium%20de%20SMS%20Enterprise.%20Mis%20datos%20son:%20" aria-label="Solicitar propuesta del plan Premium por correo">Solicitar propuesta Premium</a>
-            </div>
-          </article>
+    <!-- Gobierno de modelo -->
+    <section aria-labelledby="gov-title">
+      <h2 id="gov-title">Gobierno de modelo</h2>
+      <ul>
+        <li><b>Freeze DEV/HOLDOUT</b> y evaluación out-of-sample.</li>
+        <li><b>Control de FPR</b> y costo configurable (Premium).</li>
+        <li><b>Explicabilidad</b> de drivers y trazabilidad por alerta.</li>
+        <li><b>Entrega reproducible</b> y versionada de artefactos.</li>
+      </ul>
+    </section>
 
-          <!-- PRO -->
-          <article class="card pro" role="listitem" aria-labelledby="plan-pro">
-            <div class="card-inner">
-              <h3 id="plan-pro">Pro</h3>
-              <div class="micro">Diseñado para equipos económicos y mesas de dinero</div>
-              <div class="price" aria-label="Precio del plan Pro: 1.100 dólares por mes">USD 1.100 <small>/ mes</small></div>
-              <ul>
-                <li><b>Frecuencia:</b> quincenal</li>
-                <li><b>Incluye:</b>  Lite + perfil de riesgo, explicación de alarmas y drivers macro</li>
-                <li><b>Entrega:</b> reporte en Excel con análisis de alertas y métricas avanzadas</li>
-              </ul>
-            </div>
-            <div class="cta-bottom">
-              <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Consulta%20Plan%20Pro%20-%20SMS%20Enterprise&body=Hola,%20quiero%20hablar%20sobre%20el%20plan%20Pro%20de%20SMS%20Enterprise.%20Mis%20datos%20son:%20" aria-label="Consultar plan Pro por correo">Quiero hablar del plan Pro</a>
-            </div>
-          </article>
+    <!-- FAQs -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <div class="faq" role="tablist">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p1" id="q1">¿Qué significa H≤6m?<span>+</span></button>
+          <div class="faq-panel" id="p1" role="region" aria-labelledby="q1"><p>Horizonte máximo de 6 meses para la probabilidad estimada de tensión cambiaria. Es un pronóstico rolling de corto/mediano plazo.</p></div>
         </div>
-      </section>
-    </main>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p2" id="q2">¿Cómo se interpretan las bandas (Watch/Warning/Action)?<span>+</span></button>
+          <div class="faq-panel" id="p2" role="region" aria-labelledby="q2"><p>Watch: monitoreo reforzado; Warning: preparación táctica; Action: medidas operativas (según política de cada institución) cuando la probabilidad supera umbrales/persistencia definidos.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p3" id="q3">¿Cómo calibran falsos positivos vs. sensibilidad?<span>+</span></button>
+          <div class="faq-panel" id="p3" role="region" aria-labelledby="q3"><p>Vía funciones de costo y control de FPR. En Premium se ajustan penalizaciones y umbrales para el perfil elegido, preservando validación temporal e isotónica.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p4" id="q4">¿Qué entregables incluye cada plan?<span>+</span></button>
+          <div class="faq-panel" id="p4" role="region" aria-labelledby="q4"><p>Lite: probabilidad/alertas/métricas básicas en Excel. Pro: suma drivers, explicación y perfiles. Premium: calibración costo/beneficio, soporte directo e informe mensual.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p5" id="q5">¿Cómo se integra con mi flujo (Excel/Power BI)?<span>+</span></button>
+          <div class="faq-panel" id="p5" role="region" aria-labelledby="q5"><p>Entregas en Excel listas para incorporar a tableros. Opcionalmente, exportables a CSV/JSON para BI.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p6" id="q6">¿Qué pasa si los datos cambian (revisiones)?<span>+</span></button>
+          <div class="faq-panel" id="p6" role="region" aria-labelledby="q6"><p>El pipeline contempla revisiones oficiales. Los cambios se documentan por release y no afectan el freeze histórico de evaluación.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="p7" id="q7">¿Política de soporte / tiempos de respuesta?<span>+</span></button>
+          <div class="faq-panel" id="p7" role="region" aria-labelledby="q7"><p>Lite/Pro vía correo en horario hábil; Premium con soporte directo y reunión mensual.
+          </p></div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer" role="contentinfo">
-      <address style="font-style:normal">© 2025 — SMS Enterprise · Signal Matrix for Shocks — Argentina · <a href="mailto:santiagowickham@gmail.com">santiagowickham@gmail.com</a></address>
-    </footer>
+    <!-- Contacto -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="mailto:santiagowickham@gmail.com?subject=Demo%20SMS%20Enterprise">Agendá una demo</a>
+        <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Propuesta%20Plan%20Premium">Solicitar propuesta Premium</a>
+        <a class="btn btn-ghost" href="mailto:santiagowickham@gmail.com?subject=Prueba%2060%20d%C3%ADas%20Lite">Prueba 60 días</a>
+      </div>
+    </section>
+
+    <!-- Políticas (anclas) -->
+    <section id="privacidad" aria-labelledby="priv-title">
+      <h2 id="priv-title">Política de Privacidad</h2>
+      <p>Recopilamos únicamente la información de contacto que nos enviás voluntariamente por correo. No compartimos tus datos con terceros. Podés solicitar acceso o eliminación escribiendo a <a href="mailto:santiagowickham@gmail.com">santiagowickham@gmail.com</a>.</p>
+    </section>
+    <section id="terminos" aria-labelledby="term-title">
+      <h2 id="term-title">Términos de Servicio</h2>
+      <p>Los precios publicados son de referencia para Argentina (USD, sin impuestos). El contenido analítico se entrega “tal como es” con metodología documentada y versionada. Cualquier decisión basada en los reportes es responsabilidad del cliente.</p>
+    </section>
+  </main>
+
+  <!-- Modal Lightbox -->
+  <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-label="Vista de evidencia">
+    <div class="modal-inner">
+      <div class="modal-header"><strong>Evidencia</strong><button class="close" id="closeLightbox" aria-label="Cerrar">Cerrar</button></div>
+      <div class="modal-body"><img id="lbImg" alt="Evidencia" style="max-width:100%;height:auto;display:block"/></div>
+    </div>
   </div>
+
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookie">
+    <span>Usamos cookies para métricas anónimas (GA). </span>
+    <button class="btn btn-primary" id="cookieAccept">Aceptar</button>
+  </div>
+
+  <footer class="wrap footer" role="contentinfo">
+    © 2025 — SMS ENTERPRISE · Argentina · <a href="mailto:santiagowickham@gmail.com">santiagowickham@gmail.com</a> ·
+    <a href="#privacidad">Privacidad</a> · <a href="#terminos">Términos</a>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}});
+    });
+
+    // FAQ acordeón accesible
+    document.querySelectorAll('.faq-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const panel=document.getElementById(btn.getAttribute('aria-controls'));
+        const expanded=btn.getAttribute('aria-expanded')==='true';
+        btn.setAttribute('aria-expanded',!expanded);
+        panel.style.display=expanded?'none':'block';
+      });
+    });
+
+    // Lightbox
+    const lb=document.getElementById('lightbox');
+    const lbImg=document.getElementById('lbImg');
+    const closeLb=document.getElementById('closeLightbox');
+    document.querySelectorAll('[data-open]').forEach(img=>{
+      img.addEventListener('click',()=>{lbImg.src=img.src;lb.classList.add('open');lb.setAttribute('aria-hidden','false');});
+    });
+    closeLb.addEventListener('click',()=>{lb.classList.remove('open');lb.setAttribute('aria-hidden','true');lbImg.removeAttribute('src');});
+    lb.addEventListener('click',e=>{if(e.target===lb){closeLb.click();}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('open')) closeLb.click();});
+
+    // Cookie banner + GA (placeholder ID)
+    const COOKIE_KEY='sms_cookie_ok';
+    const cookie=document.getElementById('cookie');
+    const showCookie=()=>{if(!localStorage.getItem(COOKIE_KEY)) cookie.style.display='flex'};
+    const acceptCookie=()=>{localStorage.setItem(COOKIE_KEY,'1');cookie.style.display='none';
+      // Inicializar GA solo tras consentimiento
+      const GA_ID='G-XXXXXXX'; // TODO: reemplazar por tu ID GA4
+      if(GA_ID&&GA_ID!=='G-XXXXXXX'){
+        const s=document.createElement('script');s.async=true;s.src=`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;document.head.appendChild(s);
+        window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js', new Date());gtag('config', GA_ID);
+      }
+    };
+    document.getElementById('cookieAccept').addEventListener('click',acceptCookie);
+    showCookie();
+  </script>
 </body>
 </html>
