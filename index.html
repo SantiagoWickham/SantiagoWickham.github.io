@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://santiagowickham.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- JSON-LD: Organización + Sitio + Producto/Ofertas -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">{
     "@context":"https://schema.org","@type":"Organization","name":"SMS ENTERPRISE","url":"https://santiagowickham.github.io/","logo":"https://santiagowickham.github.io/logo_sms_enterprise_claro.png","contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"SMSENTERPRISEDEV@gmail.com"}]}
   </script>
@@ -43,7 +43,7 @@
     a{color:#93c5fd}
     .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 
-    /* NAVBAR sticky */
+    /* NAVBAR */
     .navbar{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
     .nav-left{display:flex;align-items:center;gap:10px}
@@ -58,19 +58,52 @@
     @media(min-width:880px){.nav-links{display:flex}}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:42px 0 26px}
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:42px 0 26px}
     @media(max-width:980px){.hero{grid-template-columns:1fr}}
     h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:10px 0 6px;font-weight:900}
     .gradient{background:linear-gradient(92deg,#93c5fd,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .subtitle{font-size:clamp(16px,2.4vw,20px);color:#cbd5e1;margin:0 0 10px}
     .lead{color:#a8b3c7;max-width:70ch}
-    .hero-visual{background:var(--card);border:1px solid var(--card-border);border-radius:16px;min-height:240px;display:flex;align-items:center;justify-content:center}
+    .hero-visual{
+      position:relative;background:var(--card);border:1px solid var(--card-border);
+      border-radius:16px;min-height:248px;display:flex;align-items:center;justify-content:center;overflow:hidden
+    }
+    .hero-visual::before{ /* textura sutil para que no se vea vacío */
+      content:"";position:absolute;inset:0;background:
+        radial-gradient(1000px 300px at 20% -10%, rgba(37,99,235,.15), transparent 60%),
+        radial-gradient(800px 300px at 120% 120%, rgba(56,189,248,.12), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 40px);
+      pointer-events:none
+    }
+
+    /* Pipeline pills (reemplaza SVG) */
+    .pipeline{position:relative;display:flex;gap:18px;align-items:center;padding:18px}
+    .pill{
+      padding:14px 16px;border:1px solid var(--card-border);background:rgba(13,22,44,.8);
+      border-radius:14px;min-width:130px;text-align:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)
+    }
+    .pill b{display:block;font-size:14px;letter-spacing:.2px;color:#dbe5ff}
+    .pill small{display:block;color:#9fb3d9;font-size:11px;margin-top:4px}
+    .arrow{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:14px solid #4285f4;opacity:.9}
+    .ico{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:999px;margin-bottom:8px}
+    .ico.d{background:#1d4ed8}
+    .ico.p{background:#0891b2}
+    .ico.a{background:#60a5fa}
 
     /* KPI strip */
     .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
-    .kpi{background:linear-gradient(180deg,#121c36,#0b1226);border:1px solid #2a3a63;border-radius:12px;padding:12px}
-    .kpi b{display:block;font-size:13px;color:#b7c2d8;letter-spacing:.2px}
-    .kpi span{font-size:18px;font-weight:800;color:#ffffff;text-shadow:0 0 1px rgba(0,0,0,.25)}
+    .kpi{
+      background:linear-gradient(180deg,#121c36,#0b1226);
+      border:1px solid #2a3a63;border-radius:14px;padding:14px; position:relative
+    }
+    .kpi .kpi-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .kpi .kpi-head .dot{width:8px;height:8px;border-radius:999px;background:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.18)}
+    .kpi b{font-size:12px;color:#b7c2d8;letter-spacing:.2px}
+    .kpi .value{font-size:20px;font-weight:800;color:#fff}
+    /* Métricas como chips */
+    .kpi.metrics .value{display:none}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{font-size:12px;font-weight:700;border:1px solid #2a3a63;background:#0e1933;border-radius:999px;padding:6px 10px;color:#dce6ff}
     @media(max-width:880px){.kpis{grid-template-columns:repeat(2,1fr)}}
 
     /* Secciones */
@@ -78,7 +111,7 @@
     h2{margin:8px 0 12px;font-size:clamp(22px,3.5vw,28px)}
     .note{color:var(--muted);font-size:14px;margin:0 0 14px}
 
-    /* Cómo funciona (pasos) */
+    /* Pasos */
     .steps{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
     .step{background:var(--card);border:1px solid var(--card-border);border-radius:16px;padding:18px}
     .step h3{margin:0 0 6px;font-size:18px}
@@ -106,12 +139,12 @@
     th,td{padding:12px 10px;border-bottom:1px solid var(--card-border);text-align:left}
     th{background:#0c152b}
 
-    /* Evidencia (galería) */
+    /* Evidencia */
     .gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .gallery img{width:100%;height:auto;border:1px solid var(--card-border);border-radius:12px;cursor:pointer}
     @media(max-width:880px){.gallery{grid-template-columns:1fr}}
 
-    /* Modal/Lightbox */
+    /* Modal */
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:60}
     .modal.open{display:flex}
     .modal-inner{background:var(--bg);border:1px solid var(--card-border);border-radius:12px;max-width:min(96vw,1100px);max-height:90vh;overflow:auto}
@@ -125,7 +158,7 @@
     .faq-btn{width:100%;text-align:left;background:#0c152b;color:#e5e7eb;border:0;padding:14px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
     .faq-panel{display:none;padding:12px 16px;background:#0b1226}
 
-    /* Cookie banner */
+    /* Cookies */
     .cookie{position:fixed;bottom:18px;left:18px;right:18px;z-index:70;background:#0b1226;border:1px solid var(--card-border);border-radius:14px;padding:12px;display:none}
 
     /* Footer */
@@ -159,40 +192,58 @@
       <h1>SMS ENTERPRISE – <span class="gradient">Signal Matrix for Shocks</span></h1>
       <p class="subtitle">Anticipá el riesgo cambiario con SMS ENTERPRISE.</p>
       <p class="lead">Modelo cuantitativo que estima la probabilidad de tensiones cambiarias a 6 meses. Diseñado para bancos, inversores y organismos públicos: convierte señales macro-financieras en una probabilidad única, transparente y accionable.</p>
+
+      <!-- KPIs -->
       <div class="kpis" aria-label="Indicadores clave">
-        <div class="kpi"><b>Horizonte</b><span>H≤6 meses</span></div>
-        <div class="kpi"><b>Cobertura histórica</b><span>2006–2025</span></div>
-        <div class="kpi"><b>Métricas</b><span>AUC 95.6% · AP 81.1% · Brier 6–15%</span></div>
-        <div class="kpi"><b>Último release</b><span>2024-12-31</span></div>
+        <div class="kpi">
+          <div class="kpi-head"><span class="dot"></span><b>Horizonte</b></div>
+          <div class="value">H≤6 meses</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-head"><span class="dot"></span><b>Cobertura histórica</b></div>
+          <div class="value">2006–2025</div>
+        </div>
+        <div class="kpi metrics">
+          <div class="kpi-head"><span class="dot"></span><b>Métricas</b></div>
+          <div class="chips">
+            <span class="chip">AUC 95.6%</span>
+            <span class="chip">AP 81.1%</span>
+            <span class="chip">Brier 6–15%</span>
+          </div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-head"><span class="dot"></span><b>Último release</b></div>
+          <div class="value">2024-12-31</div>
+        </div>
       </div>
+
       <div style="display:flex;gap:10px;flex-wrap:wrap" role="group" aria-label="Acciones principales">
         <a class="btn btn-primary" href="mailto:SMSENTERPRISEDEV@gmail.com?subject=Demo%20SMS%20Enterprise">Agendá una demo</a>
         <a class="btn btn-ghost" href="mailto:SMSENTERPRISEDEV@gmail.com?subject=Prueba%2060%20d%C3%ADas%20Lite">Prueba 60 días</a>
       </div>
     </div>
-    <div class="hero-visual" aria-label="Diagrama del flujo del modelo">
-      <!-- Mini-diagrama SVG corporativo (sin detalles técnicos) -->
-      <svg width="420" height="220" viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Datos → Probabilidad → Alertas">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#2563eb"/></linearGradient>
-        </defs>
-        <rect x="10" y="20" rx="12" ry="12" width="120" height="60" fill="#0b1226" stroke="#1f2a44"/>
-        <text x="70" y="55" text-anchor="middle" fill="#e5e7eb" font-size="12">Datos</text>
 
-        <rect x="160" y="20" rx="12" ry="12" width="120" height="60" fill="#0b1226" stroke="#1f2a44"/>
-        <text x="220" y="50" text-anchor="middle" fill="#e5e7eb" font-size="12">Probabilidad</text>
-
-        <rect x="310" y="20" rx="12" ry="12" width="100" height="60" fill="#0b1226" stroke="#1f2a44"/>
-        <text x="360" y="50" text-anchor="middle" fill="#e5e7eb" font-size="12">Alertas</text>
-
-        <line x1="130" y1="50" x2="160" y2="50" stroke="url(#g1)" stroke-width="3"/>
-        <line x1="280" y1="50" x2="310" y2="50" stroke="url(#g1)" stroke-width="3"/>
-
-        <!-- Iconos genéricos -->
-        <circle cx="70" cy="120" r="12" fill="#2563eb"/>
-        <rect x="206" y="108" width="28" height="24" rx="6" fill="#38bdf8"/>
-        <polygon points="350,114 370,126 350,138" fill="#60a5fa"/>
-      </svg>
+    <!-- Pipeline pills (no SVG, más lleno y limpio) -->
+    <div class="hero-visual" aria-label="Flujo simplificado: Datos → Probabilidad → Alertas">
+      <div class="pipeline" aria-hidden="true">
+        <div class="pill">
+          <div class="ico d"> </div>
+          <b>Datos</b>
+          <small>ingesta segura</small>
+        </div>
+        <div class="arrow"></div>
+        <div class="pill">
+          <div class="ico p"> </div>
+          <b>Probabilidad</b>
+          <small>calibración</small>
+        </div>
+        <div class="arrow"></div>
+        <div class="pill">
+          <div class="ico a"> </div>
+          <b>Alertas</b>
+          <small>bandas/umbrales</small>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -205,7 +256,6 @@
         <div class="step"><h3>2) Analiza señales</h3><p>Interpretación macro-financiera para sintetizar en una probabilidad única.</p></div>
         <div class="step"><h3>3) Bandas y alertas</h3><p>Umbrales robustos y persistencia para Watch / Warning / Action.</p></div>
       </div>
-      <!-- Aviso retirado: sin barra redundante -->
     </section>
 
     <!-- Planes -->
@@ -280,7 +330,7 @@
       </div>
     </section>
 
-    <!-- Evidencia / Galería -->
+    <!-- Evidencia -->
     <section id="evidencia" aria-labelledby="evidencia-title">
       <h2 id="evidencia-title">Evidencia</h2>
       <p class="note">Probabilidad histórica y comparación de perfiles (desempeño).</p>
@@ -346,7 +396,7 @@
       </div>
     </section>
 
-    <!-- Políticas (anclas) -->
+    <!-- Políticas -->
     <section id="privacidad" aria-labelledby="priv-title">
       <h2 id="priv-title">Política de Privacidad</h2>
       <p>Recopilamos únicamente la información de contacto que nos enviás voluntariamente por correo. No compartimos tus datos con terceros. Podés solicitar acceso o eliminación escribiendo a <a href="mailto:SMSENTERPRISEDEV@gmail.com">SMSENTERPRISEDEV@gmail.com</a>.</p>
@@ -405,46 +455,34 @@
 
     // Cookie banner + Consent-managed Tagging (GTM/GA)
     const COOKIE_KEY='sms_cookie_ok';
-    const GTM_ID='GTM-PDC9CHSM';      // ▶︎ tu contenedor de Google Tag Manager
-    const GA_ID='';                   // opcional: si querés cargar GA4 directo (ej: 'G-XXXXXXX')
+    const GTM_ID='GTM-PDC9CHSM';
+    const GA_ID=''; // opcional
 
     const cookie=document.getElementById('cookie');
     const showCookie=()=>{ if(!localStorage.getItem(COOKIE_KEY)) cookie.style.display='flex'; else initTags(); };
 
     function loadGTM(id){
-      // dataLayer
       window.dataLayer=window.dataLayer||[];
       window.dataLayer.push({ 'consentGranted': true, 'event': 'gtm.consentGranted' });
-      // script
       const f=document.getElementsByTagName('script')[0];
       const j=document.createElement('script');
       j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+id; f.parentNode.insertBefore(j,f);
-      // noscript (para navegadores sin JS o bloqueos)
       const ns=document.createElement('iframe');
       ns.src='https://www.googletagmanager.com/ns.html?id='+id;
       ns.height='0'; ns.width='0'; ns.style.display='none'; ns.style.visibility='hidden';
       document.body.appendChild(ns);
     }
-
     function loadGA(id){
       const s=document.createElement('script'); s.async=true; s.src=`https://www.googletagmanager.com/gtag/js?id=${id}`; document.head.appendChild(s);
       window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
       gtag('js', new Date()); gtag('config', id);
     }
-
     function initTags(){
-      // Evitar dobles cargas
       if(window.__tagsLoaded) return; window.__tagsLoaded=true;
       if(GTM_ID){ loadGTM(GTM_ID); }
       else if(GA_ID){ loadGA(GA_ID); }
     }
-
-    const acceptCookie=()=>{
-      localStorage.setItem(COOKIE_KEY,'1');
-      cookie.style.display='none';
-      initTags();
-    };
-
+    const acceptCookie=()=>{ localStorage.setItem(COOKIE_KEY,'1'); cookie.style.display='none'; initTags(); };
     document.getElementById('cookieAccept').addEventListener('click',acceptCookie);
     showCookie();
   </script>
