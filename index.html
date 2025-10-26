@@ -60,24 +60,14 @@
     @media(min-width:880px){.nav-links{display:flex}}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1.25fr .85fr;gap:24px;align-items:center;padding:42px 0 26px}
-    @media(max-width:1200px){.hero{grid-template-columns:1fr}}
-    h1{font-size:clamp(28px,6vw,46px);line-height:1.1;margin:10px 0 6px;font-weight:900}
+    .hero{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:42px 0 26px}
+    gin:10px 0 6px;font-weight:900}
     .gradient{background:linear-gradient(92deg,#93c5fd,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .subtitle{font-size:clamp(16px,2.4vw,20px);color:#cbd5e1;margin:0 0 10px}
     .lead{color:#a8b3c7;max-width:70ch}
 
     /* HERO VISUAL: ahora NUNCA se corta el contenido */
-    .hero-visual{
-      position:relative;background:var(--card);border:1px solid var(--card-border);
-      border-radius:16px;display:flex;align-items:center;justify-content:center;/*
-      */padding:24px; /* + padding para respiración */
-      overflow:visible; /* antes: hidden → podía recortar el pipeline */
-    }
-    /* textura + barrido dinámico */
-    .hero-visual::before{
-      content:"";position:absolute;inset:0;background:
-        radial-gradient(1000px 300px at 20% -10%, rgba(37,99,235,.18), transparent 60%),
+    .hero-visual{position:relative;background:var(--card);bordpx 300px at 20% -10%, rgba(37,99,235,.18), transparent 60%),
         radial-gradient(800px 300px at 120% 120%, rgba(56,189,248,.14), transparent 60%),
         repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 42px);
       pointer-events:none
@@ -209,12 +199,10 @@
     .reveal.right{transform:translateX(16px)}
     .reveal.in.left,.reveal.in.right{transform:none}
       /* === Fondo animado global (mesh sutil) === */
-    .animated-bg{position:fixed;inset:-10% -10% -10% -10%;z-index:-1;pointer-events:none;filter:blur(40px);opacity:.28;animation:meshMove 20s ease-in-out infinite alternate}
+    .animated-bg{position:fixed;inset:-10% -10% -10% -10%;z-index:-1;pointer-events:none;filter:blur(40px);opacity:.35;animation:meshMove 24s ease-in-out infinite alternate}
     @keyframes meshMove{
       0%{background:radial-gradient(40% 35% at 10% 20%, rgba(56,189,248,.25), transparent 55%),
-                 radial-gradient(35% 40% at 90% 10%, rgba(37,99,235,.25), transparent 60%),
-                 radial-gradient(45% 45% at 50% 85%, rgba(125,211,252,.18), transparent 62%)}
-      100%{background:radial-gradient(40% 35% at 15% 30%, rgba(56,189,248,.25), transparent 55%),
+                 radial-gradient(35% 40% at 90% 10%, rgba(37,99,235,.25), transpa6,189,248,.25), transparent 55%),
                    radial-gradient(35% 40% at 85% 15%, rgba(37,99,235,.25), transparent 60%),
                    radial-gradient(45% 45% at 55% 80%, rgba(125,211,252,.18), transparent 62%)}
     }
